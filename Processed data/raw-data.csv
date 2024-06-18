@@ -1,0 +1,1374 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,DistributionChannel,UserLanguage,"PID ",inclusion_nation,inclusion_first_lang,conditions,consent,cc1 r1,cc2 r1,cc1 r2,cc2 r2,cond_select,condition,1_t1_like_1,1_t1_like_35,1_t2_like_1,1_t2_like_35,67_t1_like_1,67_t1_like_35,67_t2_like_1,67_t2_like_35,68_t1_like_1,68_t1_like_35,68_t2_like_1,68_t2_like_35,69_t1_like_1,69_t1_like_35,69_t2_like_1,69_t2_like_35,70_t1_like_1,70_t1_like_35,70_t2_like_1,70_t2_like_35,71_t1_like_1,71_t1_like_35,71_t2_like_1,71_t2_like_35,72_t1_like_1,72_t1_like_35,72_t2_like_1,72_t2_like_35,73_t1_like_1,73_t1_like_35,73_t2_like_1,73_t2_like_35,74_t1_like_1,74_t1_like_35,74_t2_like_1,74_t2_like_35,75_t1_like_1,75_t1_like_35,75_t2_like_1,75_t2_like_35,76_t1_like_1,76_t1_like_35,76_t2_like_1,76_t2_like_35,77_t1_like_1,77_t1_like_35,77_t2_like_1,77_t2_like_35,78_t1_like_1,78_t1_like_35,78_t2_like_1,78_t2_like_35,79_t1_like_1,79_t1_like_35,79_t2_like_1,79_t2_like_35,80_t1_like_1,80_t1_like_35,80_t2_like_1,80_t2_like_35,81_t1_like_1,81_t1_like_35,81_t2_like_1,81_t2_like_35,82_t1_like_1,82_t1_like_35,82_t2_like_1,82_t2_like_35,83_t1_like_1,83_t1_like_35,83_t2_like_1,83_t2_like_35,84_t1_like_1,84_t1_like_35,84_t2_like_1,84_t2_like_35,85_t1_like_1,85_t1_like_35,85_t2_like_1,85_t2_like_35,86_t1_like_1,86_t1_like_35,86_t2_like_1,86_t2_like_35,87_t1_like_1,87_t1_like_35,87_t2_like_1,87_t2_like_35,88_t1_like_1,88_t1_like_35,88_t2_like_1,88_t2_like_35,89_t1_like_1,89_t1_like_35,89_t2_like_1,89_t2_like_35,1_COUNTERPROB_inf_1,1_COUNTERPROB_inf_4,1_COUNTERPROB_inf_5,1_COUNTERPROB_inf_8,1_COUNTERPROB_inf_9,1_COUNTERPROB_inf_10,1_STEREOPROB_inf_1,1_STEREOPROB_inf_4,1_STEREOPROB_inf_5,1_STEREOPROB_inf_8,1_STEREOPROB_inf_9,1_STEREOPROB_inf_10,1_stereo_1,1_stereo_4,1_stereo_5,1_stereo_8,1_stereo_9,1_stereo_10,1_typicality_target_1,1_typicality_nontarget_1,67_COUNTERPROB_inf_1,67_COUNTERPROB_inf_4,67_COUNTERPROB_inf_5,67_COUNTERPROB_inf_8,67_COUNTERPROB_inf_9,67_COUNTERPROB_inf_10,67_STEREOPROB_inf_1,67_STEREOPROB_inf_4,67_STEREOPROB_inf_5,67_STEREOPROB_inf_8,67_STEREOPROB_inf_9,67_STEREOPROB_inf_10,67_stereo_1,67_stereo_4,67_stereo_5,67_stereo_8,67_stereo_9,67_stereo_10,67_typicality_target_1,67_typicality_nontarget_1,68_COUNTERPROB_inf_1,68_COUNTERPROB_inf_4,68_COUNTERPROB_inf_5,68_COUNTERPROB_inf_8,68_COUNTERPROB_inf_9,68_COUNTERPROB_inf_10,68_STEREOPROB_inf_1,68_STEREOPROB_inf_4,68_STEREOPROB_inf_5,68_STEREOPROB_inf_8,68_STEREOPROB_inf_9,68_STEREOPROB_inf_10,68_stereo_1,68_stereo_4,68_stereo_5,68_stereo_8,68_stereo_9,68_stereo_10,68_typicality_target_1,68_typicality_nontarget_1,69_COUNTERPROB_inf_1,69_COUNTERPROB_inf_4,69_COUNTERPROB_inf_5,69_COUNTERPROB_inf_8,69_COUNTERPROB_inf_9,69_COUNTERPROB_inf_10,69_STEREOPROB_inf_1,69_STEREOPROB_inf_4,69_STEREOPROB_inf_5,69_STEREOPROB_inf_8,69_STEREOPROB_inf_9,69_STEREOPROB_inf_10,69_stereo_1,69_stereo_4,69_stereo_5,69_stereo_8,69_stereo_9,69_stereo_10,69_typicality_target_1,69_typicality_nontarget_1,70_COUNTERPROB_inf_1,70_COUNTERPROB_inf_4,70_COUNTERPROB_inf_5,70_COUNTERPROB_inf_8,70_COUNTERPROB_inf_9,70_COUNTERPROB_inf_10,70_STEREOPROB_inf_1,70_STEREOPROB_inf_4,70_STEREOPROB_inf_5,70_STEREOPROB_inf_8,70_STEREOPROB_inf_9,70_STEREOPROB_inf_10,70_stereo_1,70_stereo_4,70_stereo_5,70_stereo_8,70_stereo_9,70_stereo_10,70_typicality_target_1,70_typicality_nontarget_1,71_COUNTERPROB_inf_1,71_COUNTERPROB_inf_4,71_COUNTERPROB_inf_5,71_COUNTERPROB_inf_8,71_COUNTERPROB_inf_9,71_COUNTERPROB_inf_10,71_STEREOPROB_inf_1,71_STEREOPROB_inf_4,71_STEREOPROB_inf_5,71_STEREOPROB_inf_8,71_STEREOPROB_inf_9,71_STEREOPROB_inf_10,71_stereo_1,71_stereo_4,71_stereo_5,71_stereo_8,71_stereo_9,71_stereo_10,71_typicality_target_1,71_typicality_nontarget_1,72_COUNTERPROB_inf_1,72_COUNTERPROB_inf_4,72_COUNTERPROB_inf_5,72_COUNTERPROB_inf_8,72_COUNTERPROB_inf_9,72_COUNTERPROB_inf_10,72_STEREOPROB_inf_1,72_STEREOPROB_inf_4,72_STEREOPROB_inf_5,72_STEREOPROB_inf_8,72_STEREOPROB_inf_9,72_STEREOPROB_inf_10,72_stereo_1,72_stereo_4,72_stereo_5,72_stereo_8,72_stereo_9,72_stereo_10,72_typicality_target_1,72_typicality_nontarget_1,73_COUNTERPROB_inf_1,73_COUNTERPROB_inf_4,73_COUNTERPROB_inf_5,73_COUNTERPROB_inf_8,73_COUNTERPROB_inf_9,73_COUNTERPROB_inf_10,73_STEREOPROB_inf_1,73_STEREOPROB_inf_4,73_STEREOPROB_inf_5,73_STEREOPROB_inf_8,73_STEREOPROB_inf_9,73_STEREOPROB_inf_10,73_stereo_1,73_stereo_4,73_stereo_5,73_stereo_8,73_stereo_9,73_stereo_10,73_typicality_target_1,73_typicality_nontarget_1,74_COUNTERPROB_inf_1,74_COUNTERPROB_inf_4,74_COUNTERPROB_inf_5,74_COUNTERPROB_inf_8,74_COUNTERPROB_inf_9,74_COUNTERPROB_inf_10,74_STEREOPROB_inf_1,74_STEREOPROB_inf_4,74_STEREOPROB_inf_5,74_STEREOPROB_inf_8,74_STEREOPROB_inf_9,74_STEREOPROB_inf_10,74_stereo_1,74_stereo_4,74_stereo_5,74_stereo_8,74_stereo_9,74_stereo_10,74_typicality_target_1,74_typicality_nontarget_1,75_COUNTERPROB_inf_1,75_COUNTERPROB_inf_4,75_COUNTERPROB_inf_5,75_COUNTERPROB_inf_8,75_COUNTERPROB_inf_9,75_COUNTERPROB_inf_10,75_STEREOPROB_inf_1,75_STEREOPROB_inf_4,75_STEREOPROB_inf_5,75_STEREOPROB_inf_8,75_STEREOPROB_inf_9,75_STEREOPROB_inf_10,75_stereo_1,75_stereo_4,75_stereo_5,75_stereo_8,75_stereo_9,75_stereo_10,75_typicality_target_1,75_typicality_nontarget_1,76_COUNTERPROB_inf_1,76_COUNTERPROB_inf_4,76_COUNTERPROB_inf_5,76_COUNTERPROB_inf_8,76_COUNTERPROB_inf_9,76_COUNTERPROB_inf_10,76_STEREOPROB_inf_1,76_STEREOPROB_inf_4,76_STEREOPROB_inf_5,76_STEREOPROB_inf_8,76_STEREOPROB_inf_9,76_STEREOPROB_inf_10,76_stereo_1,76_stereo_4,76_stereo_5,76_stereo_8,76_stereo_9,76_stereo_10,76_typicality_target_1,76_typicality_nontarget_1,77_COUNTERPROB_inf_1,77_COUNTERPROB_inf_4,77_COUNTERPROB_inf_5,77_COUNTERPROB_inf_8,77_COUNTERPROB_inf_9,77_COUNTERPROB_inf_10,77_STEREOPROB_inf_1,77_STEREOPROB_inf_4,77_STEREOPROB_inf_5,77_STEREOPROB_inf_8,77_STEREOPROB_inf_9,77_STEREOPROB_inf_10,77_stereo_1,77_stereo_4,77_stereo_5,77_stereo_8,77_stereo_9,77_stereo_10,77_typicality_target_1,77_typicality_nontarget_1,78_COUNTERPROB_inf_1,78_COUNTERPROB_inf_4,78_COUNTERPROB_inf_5,78_COUNTERPROB_inf_8,78_COUNTERPROB_inf_9,78_COUNTERPROB_inf_10,78_STEREOPROB_inf_1,78_STEREOPROB_inf_4,78_STEREOPROB_inf_5,78_STEREOPROB_inf_8,78_STEREOPROB_inf_9,78_STEREOPROB_inf_10,78_stereo_1,78_stereo_4,78_stereo_5,78_stereo_8,78_stereo_9,78_stereo_10,78_typicality_target_1,78_typicality_nontarget_1,79_COUNTERPROB_inf_1,79_COUNTERPROB_inf_4,79_COUNTERPROB_inf_5,79_COUNTERPROB_inf_8,79_COUNTERPROB_inf_9,79_COUNTERPROB_inf_10,79_STEREOPROB_inf_1,79_STEREOPROB_inf_4,79_STEREOPROB_inf_5,79_STEREOPROB_inf_8,79_STEREOPROB_inf_9,79_STEREOPROB_inf_10,79_stereo_1,79_stereo_4,79_stereo_5,79_stereo_8,79_stereo_9,79_stereo_10,79_typicality_target_1,79_typicality_nontarget_1,80_COUNTERPROB_inf_1,80_COUNTERPROB_inf_4,80_COUNTERPROB_inf_5,80_COUNTERPROB_inf_8,80_COUNTERPROB_inf_9,80_COUNTERPROB_inf_10,80_STEREOPROB_inf_1,80_STEREOPROB_inf_4,80_STEREOPROB_inf_5,80_STEREOPROB_inf_8,80_STEREOPROB_inf_9,80_STEREOPROB_inf_10,80_stereo_1,80_stereo_4,80_stereo_5,80_stereo_8,80_stereo_9,80_stereo_10,80_typicality_target_1,80_typicality_nontarget_1,81_COUNTERPROB_inf_1,81_COUNTERPROB_inf_4,81_COUNTERPROB_inf_5,81_COUNTERPROB_inf_8,81_COUNTERPROB_inf_9,81_COUNTERPROB_inf_10,81_STEREOPROB_inf_1,81_STEREOPROB_inf_4,81_STEREOPROB_inf_5,81_STEREOPROB_inf_8,81_STEREOPROB_inf_9,81_STEREOPROB_inf_10,81_stereo_1,81_stereo_4,81_stereo_5,81_stereo_8,81_stereo_9,81_stereo_10,81_typicality_target_1,81_typicality_nontarget_1,82_COUNTERPROB_inf_1,82_COUNTERPROB_inf_4,82_COUNTERPROB_inf_5,82_COUNTERPROB_inf_8,82_COUNTERPROB_inf_9,82_COUNTERPROB_inf_10,82_STEREOPROB_inf_1,82_STEREOPROB_inf_4,82_STEREOPROB_inf_5,82_STEREOPROB_inf_8,82_STEREOPROB_inf_9,82_STEREOPROB_inf_10,82_stereo_1,82_stereo_4,82_stereo_5,82_stereo_8,82_stereo_9,82_stereo_10,82_typicality_target_1,82_typicality_nontarget_1,83_COUNTERPROB_inf_1,83_COUNTERPROB_inf_4,83_COUNTERPROB_inf_5,83_COUNTERPROB_inf_8,83_COUNTERPROB_inf_9,83_COUNTERPROB_inf_10,83_STEREOPROB_inf_1,83_STEREOPROB_inf_4,83_STEREOPROB_inf_5,83_STEREOPROB_inf_8,83_STEREOPROB_inf_9,83_STEREOPROB_inf_10,83_stereo_1,83_stereo_4,83_stereo_5,83_stereo_8,83_stereo_9,83_stereo_10,83_typicality_target_1,83_typicality_nontarget_1,84_COUNTERPROB_inf_1,84_COUNTERPROB_inf_4,84_COUNTERPROB_inf_5,84_COUNTERPROB_inf_8,84_COUNTERPROB_inf_9,84_COUNTERPROB_inf_10,84_STEREOPROB_inf_1,84_STEREOPROB_inf_4,84_STEREOPROB_inf_5,84_STEREOPROB_inf_8,84_STEREOPROB_inf_9,84_STEREOPROB_inf_10,84_stereo_1,84_stereo_4,84_stereo_5,84_stereo_8,84_stereo_9,84_stereo_10,84_typicality_target_1,84_typicality_nontarget_1,85_COUNTERPROB_inf_1,85_COUNTERPROB_inf_4,85_COUNTERPROB_inf_5,85_COUNTERPROB_inf_8,85_COUNTERPROB_inf_9,85_COUNTERPROB_inf_10,85_STEREOPROB_inf_1,85_STEREOPROB_inf_4,85_STEREOPROB_inf_5,85_STEREOPROB_inf_8,85_STEREOPROB_inf_9,85_STEREOPROB_inf_10,85_stereo_1,85_stereo_4,85_stereo_5,85_stereo_8,85_stereo_9,85_stereo_10,85_typicality_target_1,85_typicality_nontarget_1,86_COUNTERPROB_inf_1,86_COUNTERPROB_inf_4,86_COUNTERPROB_inf_5,86_COUNTERPROB_inf_8,86_COUNTERPROB_inf_9,86_COUNTERPROB_inf_10,86_STEREOPROB_inf_1,86_STEREOPROB_inf_4,86_STEREOPROB_inf_5,86_STEREOPROB_inf_8,86_STEREOPROB_inf_9,86_STEREOPROB_inf_10,86_stereo_1,86_stereo_4,86_stereo_5,86_stereo_8,86_stereo_9,86_stereo_10,86_typicality_target_1,86_typicality_nontarget_1,87_COUNTERPROB_inf_1,87_COUNTERPROB_inf_4,87_COUNTERPROB_inf_5,87_COUNTERPROB_inf_8,87_COUNTERPROB_inf_9,87_COUNTERPROB_inf_10,87_STEREOPROB_inf_1,87_STEREOPROB_inf_4,87_STEREOPROB_inf_5,87_STEREOPROB_inf_8,87_STEREOPROB_inf_9,87_STEREOPROB_inf_10,87_stereo_1,87_stereo_4,87_stereo_5,87_stereo_8,87_stereo_9,87_stereo_10,87_typicality_target_1,87_typicality_nontarget_1,88_COUNTERPROB_inf_1,88_COUNTERPROB_inf_4,88_COUNTERPROB_inf_5,88_COUNTERPROB_inf_8,88_COUNTERPROB_inf_9,88_COUNTERPROB_inf_10,88_STEREOPROB_inf_1,88_STEREOPROB_inf_4,88_STEREOPROB_inf_5,88_STEREOPROB_inf_8,88_STEREOPROB_inf_9,88_STEREOPROB_inf_10,88_stereo_1,88_stereo_4,88_stereo_5,88_stereo_8,88_stereo_9,88_stereo_10,88_typicality_target_1,88_typicality_nontarget_1,89_COUNTERPROB_inf_1,89_COUNTERPROB_inf_4,89_COUNTERPROB_inf_5,89_COUNTERPROB_inf_8,89_COUNTERPROB_inf_9,89_COUNTERPROB_inf_10,89_STEREOPROB_inf_1,89_STEREOPROB_inf_4,89_STEREOPROB_inf_5,89_STEREOPROB_inf_8,89_STEREOPROB_inf_9,89_STEREOPROB_inf_10,89_stereo_1,89_stereo_4,89_stereo_5,89_stereo_8,89_stereo_9,89_stereo_10,89_typicality_target_1,89_typicality_nontarget_1,gender,gender_3_TEXT,age,political_identity,political_identity_3_TEXT,political_ideology_1,data_quality,stand_out,deception,debriefing,informed_consent,PROLIFIC_PID,ID,condition,response_clicked,time_spent
+Anfangsdatum,Enddatum,Antworttyp,Aktueller Stand,Dauer (in Sekunden),Beendet,Erfassungsdatum,Antwort-ID,Verteilungskanal,Benutzersprache,"Welcome, and thank you for your participation in this study! Please enter your Prolific ID if it has not already been inserted automatically.",What is your nationality?,What is your first language?,"Please take your time to read the following information about the conditions of participation and data security, storage, and analysis.",Please confirm.,"Based on the information you just read, please indicate what kind of text you will read for this study.
+
+Please re-read the information above if you are not sure. You will have two opportunities to get this question correct.","Based on the information you have just read, please indicate the purpose for which the show was developed.
+
+Please re-read the information above if you are not sure. You will have two opportunities to get this question correct.",[QID444-QuestionText],[QID445-QuestionText],cond_select,condition,"Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_DIS_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_DIS_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_DIS_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_DIS_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_CON_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_CON_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_CON_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_CON_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_DIS_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_DIS_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_DIS_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_DIS_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_CON_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_CON_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_CON_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_CON_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_DIS_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_DIS_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_DIS_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_DIS_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_CON_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_CON_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_CON_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_CON_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_DIS_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_DIS_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_DIS_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_DIS_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_CON_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_CON_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_CON_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_CON_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_DIS_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_DIS_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_DIS_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_DIS_ENVIRONMENT - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_CON_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - REP_CON_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_CON_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - REP_CON_ENVIRONMENT - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_DIS_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_DIS_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_DIS_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_DIS_ENVIRONMENT - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_CON_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - DEM_CON_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_CON_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - DEM_CON_ENVIRONMENT - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_DIS_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_DIS_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_DIS_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_DIS_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_CON_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_CON_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_CON_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_CON_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_DIS_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_DIS_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_DIS_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_DIS_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_CON_GUN - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_CON_GUN - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_CON_GUN - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_CON_GUN - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_DIS_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_DIS_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_DIS_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_DIS_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_CON_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_CON_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_CON_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_CON_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_DIS_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_DIS_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_DIS_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_DIS_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_CON_AFFIRM - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_CON_AFFIRM - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_CON_AFFIRM - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_CON_AFFIRM - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_DIS_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_DIS_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_DIS_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_DIS_ENVIRONMENT - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_CON_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - CON_CON_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_CON_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - CON_CON_ENVIRONMENT - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_DIS_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_DIS_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_DIS_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_DIS_ENVIRONMENT - the person in the dark-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_CON_ENVIRONMENT - the person in the light-colored bubble","Based on what you've read so far, what is your impression of the two participants? Please answer the following question.
+
+
+How likable do you find the two participants? - LIB_CON_ENVIRONMENT - the person in the dark-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_CON_ENVIRONMENT - the person in the light-colored bubble","Now that you have read the second part of the transcript, please answer the following question again.
+
+ 
+How likable do you find the two participants? - LIB_CON_ENVIRONMENT - the person in the dark-colored bubble","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - REP_DIS_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - REP_DIS_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - REP_CON_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - REP_CON_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - DEM_DIS_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - DEM_DIS_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - DEM_CON_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - DEM_CON_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - REP_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - REP_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - REP_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - REP_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - DEM_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - DEM_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - DEM_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - DEM_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_DIS_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_DIS_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - REP_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - REP_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - REP_CON_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - REP_CON_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - REP_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - REP_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_DIS_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_DIS_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - DEM_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - DEM_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - DEM_CON_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - DEM_CON_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - DEM_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - DEM_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - CON_DIS_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - CON_DIS_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - CON_CON_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - CON_CON_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - LIB_DIS_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - LIB_DIS_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_GUN - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_GUN - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_GUN - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_GUN - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_GUN - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_GUN - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_GUN - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - LIB_CON_GUN - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - LIB_CON_GUN - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - CON_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - CON_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - CON_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - CON_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - LIB_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - LIB_DIS_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_AFFIRM - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_AFFIRM - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_AFFIRM - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_AFFIRM - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_AFFIRM - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_AFFIRM - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_AFFIRM - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - LIB_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - LIB_CON_AFFIRM - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_DIS_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_DIS_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - CON_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - CON_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - CON_CON_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - CON_CON_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - CON_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - CON_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_DIS_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_DIS_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - LIB_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - LIB_DIS_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-4]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-5]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-6]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-7]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-8]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-9]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-10]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-11]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-12]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-13]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-14]""","In general, how likely is it that someone with the following
+
+opinions is a [Field-2] or a [Field-3]? - LIB_CON_ENVIRONMENT - ""[Field-15]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_ENVIRONMENT - ""[Field-4]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_ENVIRONMENT - ""[Field-5]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_ENVIRONMENT - ""[Field-6]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_ENVIRONMENT - ""[Field-7]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_ENVIRONMENT - ""[Field-8]""","Now, please indicate how [Field-2]s,
+
+on average, would respond to the statements below. - LIB_CON_ENVIRONMENT - ""[Field-9]""","One of the show's participants identified as a [Field-2].
+
+How typical was this participant of [Field-2]s in general? - LIB_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/2}.
+
+How typical was this participant of ${lm://Field/2}s in general?","One of the show's participants identified as a [Field-3].
+
+How typical was this participant of [Field-3]s in general? - LIB_CON_ENVIRONMENT - One of the show's participants identified as a ${lm://Field/3}.
+
+How typical was this participant of ${lm://Field/3}s in general?","Thank you! Now we would like you to answer some demographic questions as well as some questions about this study.
+
+What is your gender? - Selected Choice","Thank you! Now we would like you to answer some demographic questions as well as some questions about this study.
+
+What is your gender? - I identify my gender as: - Text",What is your age?,Which of the following best describes your political affiliation? - Selected Choice,Which of the following best describes your political affiliation? - Other (please specify): - Text,Where would you place yourself on the following political spectrum?,"To ensure the quality of our research, we need to know whether you conscientiously followed the study's instructions, read the information thoroughly, and maintained concentration and focus during the study. Your answers will not affect the payment you receive or otherwise disadvantage you. Please answer honestly.
+
+ 
+
+Do you feel that your responses are suitable for analyses?","Did anything about the radio show transcript stand out to you? If so, please elaborate.",Did you suspect that you were deceived about any aspect of this study?,"Thank you very much for participating in this study!
+
+Please do not close the browser just yet because we would like to provide you with more information about the aims of this study and ask you for your informed consent for data storage and analysis.
+
+
+
+In this study, we showed you a transcript of a radio show. However, this radio show does not really exist. We wrote the transcript to study people’s perceptions of the relationship between party affiliation and polarized political issues. Some participants read transcripts in which the opinions expressed matched stereotypes about the speaker’s category (such as a Democrat or liberal supporting a liberal position), but other participants read transcripts in which the opinions expressed violated stereotypes about the speaker’s category (such as a Republican or conservative supporting a liberal position). We want to test whether participants who are shown opinions that deviate from the category stereotype are less inclined to infer other people's category membership compared to participants who are shown opinions that confirm the category stereotype.
+
+
+
+As mentioned in the beginning of the study, your data were collected anonymously and do not contain any personally identifying information. You have the right to withdraw your initial consent now. If you decide to do so, you will not suffer any disadvantages and you will receive full compensation for your participation. Please be aware that if you provide final consent now, we will not be able to identify your data anymore, and thus not be able to delete your anonymized data at a later time point. If you have any comments or questions, you can write them in the box below or contact the project leader via e-mail.",Please choose.,PROLIFIC_PID,ID,condition,response_clicked,time_spent
+"{""ImportId"":""startDate"",""timeZone"":""Europe/Berlin""}","{""ImportId"":""endDate"",""timeZone"":""Europe/Berlin""}","{""ImportId"":""status""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""Europe/Berlin""}","{""ImportId"":""_recordId""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID118_TEXT""}","{""ImportId"":""QID341""}","{""ImportId"":""QID342""}","{""ImportId"":""QID413""}","{""ImportId"":""QID333""}","{""ImportId"":""QID444""}","{""ImportId"":""QID445""}","{""ImportId"":""QID447""}","{""ImportId"":""QID448""}","{""ImportId"":""QID431""}","{""ImportId"":""QID438_TEXT""}","{""ImportId"":""1_QID455_1""}","{""ImportId"":""1_QID455_35""}","{""ImportId"":""1_QID467_1""}","{""ImportId"":""1_QID467_35""}","{""ImportId"":""67_QID455_1""}","{""ImportId"":""67_QID455_35""}","{""ImportId"":""67_QID467_1""}","{""ImportId"":""67_QID467_35""}","{""ImportId"":""68_QID455_1""}","{""ImportId"":""68_QID455_35""}","{""ImportId"":""68_QID467_1""}","{""ImportId"":""68_QID467_35""}","{""ImportId"":""69_QID455_1""}","{""ImportId"":""69_QID455_35""}","{""ImportId"":""69_QID467_1""}","{""ImportId"":""69_QID467_35""}","{""ImportId"":""70_QID455_1""}","{""ImportId"":""70_QID455_35""}","{""ImportId"":""70_QID467_1""}","{""ImportId"":""70_QID467_35""}","{""ImportId"":""71_QID455_1""}","{""ImportId"":""71_QID455_35""}","{""ImportId"":""71_QID467_1""}","{""ImportId"":""71_QID467_35""}","{""ImportId"":""72_QID455_1""}","{""ImportId"":""72_QID455_35""}","{""ImportId"":""72_QID467_1""}","{""ImportId"":""72_QID467_35""}","{""ImportId"":""73_QID455_1""}","{""ImportId"":""73_QID455_35""}","{""ImportId"":""73_QID467_1""}","{""ImportId"":""73_QID467_35""}","{""ImportId"":""74_QID455_1""}","{""ImportId"":""74_QID455_35""}","{""ImportId"":""74_QID467_1""}","{""ImportId"":""74_QID467_35""}","{""ImportId"":""75_QID455_1""}","{""ImportId"":""75_QID455_35""}","{""ImportId"":""75_QID467_1""}","{""ImportId"":""75_QID467_35""}","{""ImportId"":""76_QID455_1""}","{""ImportId"":""76_QID455_35""}","{""ImportId"":""76_QID467_1""}","{""ImportId"":""76_QID467_35""}","{""ImportId"":""77_QID455_1""}","{""ImportId"":""77_QID455_35""}","{""ImportId"":""77_QID467_1""}","{""ImportId"":""77_QID467_35""}","{""ImportId"":""78_QID455_1""}","{""ImportId"":""78_QID455_35""}","{""ImportId"":""78_QID467_1""}","{""ImportId"":""78_QID467_35""}","{""ImportId"":""79_QID455_1""}","{""ImportId"":""79_QID455_35""}","{""ImportId"":""79_QID467_1""}","{""ImportId"":""79_QID467_35""}","{""ImportId"":""80_QID455_1""}","{""ImportId"":""80_QID455_35""}","{""ImportId"":""80_QID467_1""}","{""ImportId"":""80_QID467_35""}","{""ImportId"":""81_QID455_1""}","{""ImportId"":""81_QID455_35""}","{""ImportId"":""81_QID467_1""}","{""ImportId"":""81_QID467_35""}","{""ImportId"":""82_QID455_1""}","{""ImportId"":""82_QID455_35""}","{""ImportId"":""82_QID467_1""}","{""ImportId"":""82_QID467_35""}","{""ImportId"":""83_QID455_1""}","{""ImportId"":""83_QID455_35""}","{""ImportId"":""83_QID467_1""}","{""ImportId"":""83_QID467_35""}","{""ImportId"":""84_QID455_1""}","{""ImportId"":""84_QID455_35""}","{""ImportId"":""84_QID467_1""}","{""ImportId"":""84_QID467_35""}","{""ImportId"":""85_QID455_1""}","{""ImportId"":""85_QID455_35""}","{""ImportId"":""85_QID467_1""}","{""ImportId"":""85_QID467_35""}","{""ImportId"":""86_QID455_1""}","{""ImportId"":""86_QID455_35""}","{""ImportId"":""86_QID467_1""}","{""ImportId"":""86_QID467_35""}","{""ImportId"":""87_QID455_1""}","{""ImportId"":""87_QID455_35""}","{""ImportId"":""87_QID467_1""}","{""ImportId"":""87_QID467_35""}","{""ImportId"":""88_QID455_1""}","{""ImportId"":""88_QID455_35""}","{""ImportId"":""88_QID467_1""}","{""ImportId"":""88_QID467_35""}","{""ImportId"":""89_QID455_1""}","{""ImportId"":""89_QID455_35""}","{""ImportId"":""89_QID467_1""}","{""ImportId"":""89_QID467_35""}","{""ImportId"":""1_QID461_1""}","{""ImportId"":""1_QID461_4""}","{""ImportId"":""1_QID461_5""}","{""ImportId"":""1_QID461_8""}","{""ImportId"":""1_QID461_9""}","{""ImportId"":""1_QID461_10""}","{""ImportId"":""1_QID465_1""}","{""ImportId"":""1_QID465_4""}","{""ImportId"":""1_QID465_5""}","{""ImportId"":""1_QID465_8""}","{""ImportId"":""1_QID465_9""}","{""ImportId"":""1_QID465_10""}","{""ImportId"":""1_QID462_1""}","{""ImportId"":""1_QID462_4""}","{""ImportId"":""1_QID462_5""}","{""ImportId"":""1_QID462_8""}","{""ImportId"":""1_QID462_9""}","{""ImportId"":""1_QID462_10""}","{""ImportId"":""1_QID468_1""}","{""ImportId"":""1_QID469_1""}","{""ImportId"":""67_QID461_1""}","{""ImportId"":""67_QID461_4""}","{""ImportId"":""67_QID461_5""}","{""ImportId"":""67_QID461_8""}","{""ImportId"":""67_QID461_9""}","{""ImportId"":""67_QID461_10""}","{""ImportId"":""67_QID465_1""}","{""ImportId"":""67_QID465_4""}","{""ImportId"":""67_QID465_5""}","{""ImportId"":""67_QID465_8""}","{""ImportId"":""67_QID465_9""}","{""ImportId"":""67_QID465_10""}","{""ImportId"":""67_QID462_1""}","{""ImportId"":""67_QID462_4""}","{""ImportId"":""67_QID462_5""}","{""ImportId"":""67_QID462_8""}","{""ImportId"":""67_QID462_9""}","{""ImportId"":""67_QID462_10""}","{""ImportId"":""67_QID468_1""}","{""ImportId"":""67_QID469_1""}","{""ImportId"":""68_QID461_1""}","{""ImportId"":""68_QID461_4""}","{""ImportId"":""68_QID461_5""}","{""ImportId"":""68_QID461_8""}","{""ImportId"":""68_QID461_9""}","{""ImportId"":""68_QID461_10""}","{""ImportId"":""68_QID465_1""}","{""ImportId"":""68_QID465_4""}","{""ImportId"":""68_QID465_5""}","{""ImportId"":""68_QID465_8""}","{""ImportId"":""68_QID465_9""}","{""ImportId"":""68_QID465_10""}","{""ImportId"":""68_QID462_1""}","{""ImportId"":""68_QID462_4""}","{""ImportId"":""68_QID462_5""}","{""ImportId"":""68_QID462_8""}","{""ImportId"":""68_QID462_9""}","{""ImportId"":""68_QID462_10""}","{""ImportId"":""68_QID468_1""}","{""ImportId"":""68_QID469_1""}","{""ImportId"":""69_QID461_1""}","{""ImportId"":""69_QID461_4""}","{""ImportId"":""69_QID461_5""}","{""ImportId"":""69_QID461_8""}","{""ImportId"":""69_QID461_9""}","{""ImportId"":""69_QID461_10""}","{""ImportId"":""69_QID465_1""}","{""ImportId"":""69_QID465_4""}","{""ImportId"":""69_QID465_5""}","{""ImportId"":""69_QID465_8""}","{""ImportId"":""69_QID465_9""}","{""ImportId"":""69_QID465_10""}","{""ImportId"":""69_QID462_1""}","{""ImportId"":""69_QID462_4""}","{""ImportId"":""69_QID462_5""}","{""ImportId"":""69_QID462_8""}","{""ImportId"":""69_QID462_9""}","{""ImportId"":""69_QID462_10""}","{""ImportId"":""69_QID468_1""}","{""ImportId"":""69_QID469_1""}","{""ImportId"":""70_QID461_1""}","{""ImportId"":""70_QID461_4""}","{""ImportId"":""70_QID461_5""}","{""ImportId"":""70_QID461_8""}","{""ImportId"":""70_QID461_9""}","{""ImportId"":""70_QID461_10""}","{""ImportId"":""70_QID465_1""}","{""ImportId"":""70_QID465_4""}","{""ImportId"":""70_QID465_5""}","{""ImportId"":""70_QID465_8""}","{""ImportId"":""70_QID465_9""}","{""ImportId"":""70_QID465_10""}","{""ImportId"":""70_QID462_1""}","{""ImportId"":""70_QID462_4""}","{""ImportId"":""70_QID462_5""}","{""ImportId"":""70_QID462_8""}","{""ImportId"":""70_QID462_9""}","{""ImportId"":""70_QID462_10""}","{""ImportId"":""70_QID468_1""}","{""ImportId"":""70_QID469_1""}","{""ImportId"":""71_QID461_1""}","{""ImportId"":""71_QID461_4""}","{""ImportId"":""71_QID461_5""}","{""ImportId"":""71_QID461_8""}","{""ImportId"":""71_QID461_9""}","{""ImportId"":""71_QID461_10""}","{""ImportId"":""71_QID465_1""}","{""ImportId"":""71_QID465_4""}","{""ImportId"":""71_QID465_5""}","{""ImportId"":""71_QID465_8""}","{""ImportId"":""71_QID465_9""}","{""ImportId"":""71_QID465_10""}","{""ImportId"":""71_QID462_1""}","{""ImportId"":""71_QID462_4""}","{""ImportId"":""71_QID462_5""}","{""ImportId"":""71_QID462_8""}","{""ImportId"":""71_QID462_9""}","{""ImportId"":""71_QID462_10""}","{""ImportId"":""71_QID468_1""}","{""ImportId"":""71_QID469_1""}","{""ImportId"":""72_QID461_1""}","{""ImportId"":""72_QID461_4""}","{""ImportId"":""72_QID461_5""}","{""ImportId"":""72_QID461_8""}","{""ImportId"":""72_QID461_9""}","{""ImportId"":""72_QID461_10""}","{""ImportId"":""72_QID465_1""}","{""ImportId"":""72_QID465_4""}","{""ImportId"":""72_QID465_5""}","{""ImportId"":""72_QID465_8""}","{""ImportId"":""72_QID465_9""}","{""ImportId"":""72_QID465_10""}","{""ImportId"":""72_QID462_1""}","{""ImportId"":""72_QID462_4""}","{""ImportId"":""72_QID462_5""}","{""ImportId"":""72_QID462_8""}","{""ImportId"":""72_QID462_9""}","{""ImportId"":""72_QID462_10""}","{""ImportId"":""72_QID468_1""}","{""ImportId"":""72_QID469_1""}","{""ImportId"":""73_QID461_1""}","{""ImportId"":""73_QID461_4""}","{""ImportId"":""73_QID461_5""}","{""ImportId"":""73_QID461_8""}","{""ImportId"":""73_QID461_9""}","{""ImportId"":""73_QID461_10""}","{""ImportId"":""73_QID465_1""}","{""ImportId"":""73_QID465_4""}","{""ImportId"":""73_QID465_5""}","{""ImportId"":""73_QID465_8""}","{""ImportId"":""73_QID465_9""}","{""ImportId"":""73_QID465_10""}","{""ImportId"":""73_QID462_1""}","{""ImportId"":""73_QID462_4""}","{""ImportId"":""73_QID462_5""}","{""ImportId"":""73_QID462_8""}","{""ImportId"":""73_QID462_9""}","{""ImportId"":""73_QID462_10""}","{""ImportId"":""73_QID468_1""}","{""ImportId"":""73_QID469_1""}","{""ImportId"":""74_QID461_1""}","{""ImportId"":""74_QID461_4""}","{""ImportId"":""74_QID461_5""}","{""ImportId"":""74_QID461_8""}","{""ImportId"":""74_QID461_9""}","{""ImportId"":""74_QID461_10""}","{""ImportId"":""74_QID465_1""}","{""ImportId"":""74_QID465_4""}","{""ImportId"":""74_QID465_5""}","{""ImportId"":""74_QID465_8""}","{""ImportId"":""74_QID465_9""}","{""ImportId"":""74_QID465_10""}","{""ImportId"":""74_QID462_1""}","{""ImportId"":""74_QID462_4""}","{""ImportId"":""74_QID462_5""}","{""ImportId"":""74_QID462_8""}","{""ImportId"":""74_QID462_9""}","{""ImportId"":""74_QID462_10""}","{""ImportId"":""74_QID468_1""}","{""ImportId"":""74_QID469_1""}","{""ImportId"":""75_QID461_1""}","{""ImportId"":""75_QID461_4""}","{""ImportId"":""75_QID461_5""}","{""ImportId"":""75_QID461_8""}","{""ImportId"":""75_QID461_9""}","{""ImportId"":""75_QID461_10""}","{""ImportId"":""75_QID465_1""}","{""ImportId"":""75_QID465_4""}","{""ImportId"":""75_QID465_5""}","{""ImportId"":""75_QID465_8""}","{""ImportId"":""75_QID465_9""}","{""ImportId"":""75_QID465_10""}","{""ImportId"":""75_QID462_1""}","{""ImportId"":""75_QID462_4""}","{""ImportId"":""75_QID462_5""}","{""ImportId"":""75_QID462_8""}","{""ImportId"":""75_QID462_9""}","{""ImportId"":""75_QID462_10""}","{""ImportId"":""75_QID468_1""}","{""ImportId"":""75_QID469_1""}","{""ImportId"":""76_QID461_1""}","{""ImportId"":""76_QID461_4""}","{""ImportId"":""76_QID461_5""}","{""ImportId"":""76_QID461_8""}","{""ImportId"":""76_QID461_9""}","{""ImportId"":""76_QID461_10""}","{""ImportId"":""76_QID465_1""}","{""ImportId"":""76_QID465_4""}","{""ImportId"":""76_QID465_5""}","{""ImportId"":""76_QID465_8""}","{""ImportId"":""76_QID465_9""}","{""ImportId"":""76_QID465_10""}","{""ImportId"":""76_QID462_1""}","{""ImportId"":""76_QID462_4""}","{""ImportId"":""76_QID462_5""}","{""ImportId"":""76_QID462_8""}","{""ImportId"":""76_QID462_9""}","{""ImportId"":""76_QID462_10""}","{""ImportId"":""76_QID468_1""}","{""ImportId"":""76_QID469_1""}","{""ImportId"":""77_QID461_1""}","{""ImportId"":""77_QID461_4""}","{""ImportId"":""77_QID461_5""}","{""ImportId"":""77_QID461_8""}","{""ImportId"":""77_QID461_9""}","{""ImportId"":""77_QID461_10""}","{""ImportId"":""77_QID465_1""}","{""ImportId"":""77_QID465_4""}","{""ImportId"":""77_QID465_5""}","{""ImportId"":""77_QID465_8""}","{""ImportId"":""77_QID465_9""}","{""ImportId"":""77_QID465_10""}","{""ImportId"":""77_QID462_1""}","{""ImportId"":""77_QID462_4""}","{""ImportId"":""77_QID462_5""}","{""ImportId"":""77_QID462_8""}","{""ImportId"":""77_QID462_9""}","{""ImportId"":""77_QID462_10""}","{""ImportId"":""77_QID468_1""}","{""ImportId"":""77_QID469_1""}","{""ImportId"":""78_QID461_1""}","{""ImportId"":""78_QID461_4""}","{""ImportId"":""78_QID461_5""}","{""ImportId"":""78_QID461_8""}","{""ImportId"":""78_QID461_9""}","{""ImportId"":""78_QID461_10""}","{""ImportId"":""78_QID465_1""}","{""ImportId"":""78_QID465_4""}","{""ImportId"":""78_QID465_5""}","{""ImportId"":""78_QID465_8""}","{""ImportId"":""78_QID465_9""}","{""ImportId"":""78_QID465_10""}","{""ImportId"":""78_QID462_1""}","{""ImportId"":""78_QID462_4""}","{""ImportId"":""78_QID462_5""}","{""ImportId"":""78_QID462_8""}","{""ImportId"":""78_QID462_9""}","{""ImportId"":""78_QID462_10""}","{""ImportId"":""78_QID468_1""}","{""ImportId"":""78_QID469_1""}","{""ImportId"":""79_QID461_1""}","{""ImportId"":""79_QID461_4""}","{""ImportId"":""79_QID461_5""}","{""ImportId"":""79_QID461_8""}","{""ImportId"":""79_QID461_9""}","{""ImportId"":""79_QID461_10""}","{""ImportId"":""79_QID465_1""}","{""ImportId"":""79_QID465_4""}","{""ImportId"":""79_QID465_5""}","{""ImportId"":""79_QID465_8""}","{""ImportId"":""79_QID465_9""}","{""ImportId"":""79_QID465_10""}","{""ImportId"":""79_QID462_1""}","{""ImportId"":""79_QID462_4""}","{""ImportId"":""79_QID462_5""}","{""ImportId"":""79_QID462_8""}","{""ImportId"":""79_QID462_9""}","{""ImportId"":""79_QID462_10""}","{""ImportId"":""79_QID468_1""}","{""ImportId"":""79_QID469_1""}","{""ImportId"":""80_QID461_1""}","{""ImportId"":""80_QID461_4""}","{""ImportId"":""80_QID461_5""}","{""ImportId"":""80_QID461_8""}","{""ImportId"":""80_QID461_9""}","{""ImportId"":""80_QID461_10""}","{""ImportId"":""80_QID465_1""}","{""ImportId"":""80_QID465_4""}","{""ImportId"":""80_QID465_5""}","{""ImportId"":""80_QID465_8""}","{""ImportId"":""80_QID465_9""}","{""ImportId"":""80_QID465_10""}","{""ImportId"":""80_QID462_1""}","{""ImportId"":""80_QID462_4""}","{""ImportId"":""80_QID462_5""}","{""ImportId"":""80_QID462_8""}","{""ImportId"":""80_QID462_9""}","{""ImportId"":""80_QID462_10""}","{""ImportId"":""80_QID468_1""}","{""ImportId"":""80_QID469_1""}","{""ImportId"":""81_QID461_1""}","{""ImportId"":""81_QID461_4""}","{""ImportId"":""81_QID461_5""}","{""ImportId"":""81_QID461_8""}","{""ImportId"":""81_QID461_9""}","{""ImportId"":""81_QID461_10""}","{""ImportId"":""81_QID465_1""}","{""ImportId"":""81_QID465_4""}","{""ImportId"":""81_QID465_5""}","{""ImportId"":""81_QID465_8""}","{""ImportId"":""81_QID465_9""}","{""ImportId"":""81_QID465_10""}","{""ImportId"":""81_QID462_1""}","{""ImportId"":""81_QID462_4""}","{""ImportId"":""81_QID462_5""}","{""ImportId"":""81_QID462_8""}","{""ImportId"":""81_QID462_9""}","{""ImportId"":""81_QID462_10""}","{""ImportId"":""81_QID468_1""}","{""ImportId"":""81_QID469_1""}","{""ImportId"":""82_QID461_1""}","{""ImportId"":""82_QID461_4""}","{""ImportId"":""82_QID461_5""}","{""ImportId"":""82_QID461_8""}","{""ImportId"":""82_QID461_9""}","{""ImportId"":""82_QID461_10""}","{""ImportId"":""82_QID465_1""}","{""ImportId"":""82_QID465_4""}","{""ImportId"":""82_QID465_5""}","{""ImportId"":""82_QID465_8""}","{""ImportId"":""82_QID465_9""}","{""ImportId"":""82_QID465_10""}","{""ImportId"":""82_QID462_1""}","{""ImportId"":""82_QID462_4""}","{""ImportId"":""82_QID462_5""}","{""ImportId"":""82_QID462_8""}","{""ImportId"":""82_QID462_9""}","{""ImportId"":""82_QID462_10""}","{""ImportId"":""82_QID468_1""}","{""ImportId"":""82_QID469_1""}","{""ImportId"":""83_QID461_1""}","{""ImportId"":""83_QID461_4""}","{""ImportId"":""83_QID461_5""}","{""ImportId"":""83_QID461_8""}","{""ImportId"":""83_QID461_9""}","{""ImportId"":""83_QID461_10""}","{""ImportId"":""83_QID465_1""}","{""ImportId"":""83_QID465_4""}","{""ImportId"":""83_QID465_5""}","{""ImportId"":""83_QID465_8""}","{""ImportId"":""83_QID465_9""}","{""ImportId"":""83_QID465_10""}","{""ImportId"":""83_QID462_1""}","{""ImportId"":""83_QID462_4""}","{""ImportId"":""83_QID462_5""}","{""ImportId"":""83_QID462_8""}","{""ImportId"":""83_QID462_9""}","{""ImportId"":""83_QID462_10""}","{""ImportId"":""83_QID468_1""}","{""ImportId"":""83_QID469_1""}","{""ImportId"":""84_QID461_1""}","{""ImportId"":""84_QID461_4""}","{""ImportId"":""84_QID461_5""}","{""ImportId"":""84_QID461_8""}","{""ImportId"":""84_QID461_9""}","{""ImportId"":""84_QID461_10""}","{""ImportId"":""84_QID465_1""}","{""ImportId"":""84_QID465_4""}","{""ImportId"":""84_QID465_5""}","{""ImportId"":""84_QID465_8""}","{""ImportId"":""84_QID465_9""}","{""ImportId"":""84_QID465_10""}","{""ImportId"":""84_QID462_1""}","{""ImportId"":""84_QID462_4""}","{""ImportId"":""84_QID462_5""}","{""ImportId"":""84_QID462_8""}","{""ImportId"":""84_QID462_9""}","{""ImportId"":""84_QID462_10""}","{""ImportId"":""84_QID468_1""}","{""ImportId"":""84_QID469_1""}","{""ImportId"":""85_QID461_1""}","{""ImportId"":""85_QID461_4""}","{""ImportId"":""85_QID461_5""}","{""ImportId"":""85_QID461_8""}","{""ImportId"":""85_QID461_9""}","{""ImportId"":""85_QID461_10""}","{""ImportId"":""85_QID465_1""}","{""ImportId"":""85_QID465_4""}","{""ImportId"":""85_QID465_5""}","{""ImportId"":""85_QID465_8""}","{""ImportId"":""85_QID465_9""}","{""ImportId"":""85_QID465_10""}","{""ImportId"":""85_QID462_1""}","{""ImportId"":""85_QID462_4""}","{""ImportId"":""85_QID462_5""}","{""ImportId"":""85_QID462_8""}","{""ImportId"":""85_QID462_9""}","{""ImportId"":""85_QID462_10""}","{""ImportId"":""85_QID468_1""}","{""ImportId"":""85_QID469_1""}","{""ImportId"":""86_QID461_1""}","{""ImportId"":""86_QID461_4""}","{""ImportId"":""86_QID461_5""}","{""ImportId"":""86_QID461_8""}","{""ImportId"":""86_QID461_9""}","{""ImportId"":""86_QID461_10""}","{""ImportId"":""86_QID465_1""}","{""ImportId"":""86_QID465_4""}","{""ImportId"":""86_QID465_5""}","{""ImportId"":""86_QID465_8""}","{""ImportId"":""86_QID465_9""}","{""ImportId"":""86_QID465_10""}","{""ImportId"":""86_QID462_1""}","{""ImportId"":""86_QID462_4""}","{""ImportId"":""86_QID462_5""}","{""ImportId"":""86_QID462_8""}","{""ImportId"":""86_QID462_9""}","{""ImportId"":""86_QID462_10""}","{""ImportId"":""86_QID468_1""}","{""ImportId"":""86_QID469_1""}","{""ImportId"":""87_QID461_1""}","{""ImportId"":""87_QID461_4""}","{""ImportId"":""87_QID461_5""}","{""ImportId"":""87_QID461_8""}","{""ImportId"":""87_QID461_9""}","{""ImportId"":""87_QID461_10""}","{""ImportId"":""87_QID465_1""}","{""ImportId"":""87_QID465_4""}","{""ImportId"":""87_QID465_5""}","{""ImportId"":""87_QID465_8""}","{""ImportId"":""87_QID465_9""}","{""ImportId"":""87_QID465_10""}","{""ImportId"":""87_QID462_1""}","{""ImportId"":""87_QID462_4""}","{""ImportId"":""87_QID462_5""}","{""ImportId"":""87_QID462_8""}","{""ImportId"":""87_QID462_9""}","{""ImportId"":""87_QID462_10""}","{""ImportId"":""87_QID468_1""}","{""ImportId"":""87_QID469_1""}","{""ImportId"":""88_QID461_1""}","{""ImportId"":""88_QID461_4""}","{""ImportId"":""88_QID461_5""}","{""ImportId"":""88_QID461_8""}","{""ImportId"":""88_QID461_9""}","{""ImportId"":""88_QID461_10""}","{""ImportId"":""88_QID465_1""}","{""ImportId"":""88_QID465_4""}","{""ImportId"":""88_QID465_5""}","{""ImportId"":""88_QID465_8""}","{""ImportId"":""88_QID465_9""}","{""ImportId"":""88_QID465_10""}","{""ImportId"":""88_QID462_1""}","{""ImportId"":""88_QID462_4""}","{""ImportId"":""88_QID462_5""}","{""ImportId"":""88_QID462_8""}","{""ImportId"":""88_QID462_9""}","{""ImportId"":""88_QID462_10""}","{""ImportId"":""88_QID468_1""}","{""ImportId"":""88_QID469_1""}","{""ImportId"":""89_QID461_1""}","{""ImportId"":""89_QID461_4""}","{""ImportId"":""89_QID461_5""}","{""ImportId"":""89_QID461_8""}","{""ImportId"":""89_QID461_9""}","{""ImportId"":""89_QID461_10""}","{""ImportId"":""89_QID465_1""}","{""ImportId"":""89_QID465_4""}","{""ImportId"":""89_QID465_5""}","{""ImportId"":""89_QID465_8""}","{""ImportId"":""89_QID465_9""}","{""ImportId"":""89_QID465_10""}","{""ImportId"":""89_QID462_1""}","{""ImportId"":""89_QID462_4""}","{""ImportId"":""89_QID462_5""}","{""ImportId"":""89_QID462_8""}","{""ImportId"":""89_QID462_9""}","{""ImportId"":""89_QID462_10""}","{""ImportId"":""89_QID468_1""}","{""ImportId"":""89_QID469_1""}","{""ImportId"":""QID317""}","{""ImportId"":""QID317_3_TEXT""}","{""ImportId"":""QID318_TEXT""}","{""ImportId"":""QID370""}","{""ImportId"":""QID370_5_TEXT""}","{""ImportId"":""QID470_1""}","{""ImportId"":""QID323""}","{""ImportId"":""QID372_TEXT""}","{""ImportId"":""QID433_TEXT""}","{""ImportId"":""QID85_TEXT""}","{""ImportId"":""QID86""}","{""ImportId"":""PROLIFIC_PID""}","{""ImportId"":""ID""}","{""ImportId"":""condition""}","{""ImportId"":""response_clicked""}","{""ImportId"":""time_spent""}"
+2024-05-31 15:57:14,2024-05-31 17:17:24,IP-Adresse,100,4810,Wahr,2024-05-31 17:17:25,R_8C4RuVq3m6j4BLX,anonymous,EN,5b7ff763589f6f000177ca82,United States,English,✕,consent,a transcript from a new radio show,to convey a realistic impression of political disagreements,,,,LIB_DIS_AFFIRM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,33,67,41,80,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,48,87,92,9,14,9,23,12,8,84,88,78,33,25,18,92,90,77,70,77,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,man,,45,Republican,,75,yes,,,,yes,5b7ff763589f6f000177ca82,R_8C4RuVq3m6j4BLX,,,
+2024-05-31 17:18:37,2024-05-31 17:26:59,IP-Adresse,100,502,Wahr,2024-05-31 17:27:00,R_2reLxnO6cQSj5QP,anonymous,EN,5b7ff763589f6f000177ca82,United States,English,✕,consent,a transcript from a new radio show,to convey a realistic impression of political disagreements,,,,CON_CON_ENVIRONMENT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,28,16,49,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,80,94,88,18,3,14,0,0,28,71,90,79,15,12,13,85,85,91,88,90,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,woman,,24,Democrat,,76,yes,,,,yes,5b7ff763589f6f000177ca82,R_2reLxnO6cQSj5QP,,,
+2024-06-17 15:45:05,2024-06-17 15:54:32,Umfragenvorschau,100,567,Wahr,2024-06-17 15:54:32,R_6B5w9vzXuBbygoz,preview,EN,das,United States,English,✕,consent,a transcript from a new radio show,to convey a realistic impression of political disagreements,,,,CON_DIS_AFFIRM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,65,40,64,60,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,76,86,88,7,11,9,16,16,19,81,91,92,32,9,18,85,92,82,57,85,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,man,,45,Republican,,15,yes,,,,yes,das,R_6B5w9vzXuBbygoz,,,
+2024-06-17 15:54:49,2024-06-17 16:02:26,Umfragenvorschau,100,457,Wahr,2024-06-17 16:02:27,R_6DBiUloipTwlt8n,preview,EN,okjkj,United States,English,✕,consent,a transcript from a new radio show,to evaluate the reception of political debates,a transcript from a new radio show,to convey a realistic impression of political disagreements,,CON_DIS_ENVIRONMENT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,83,16,77,61,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,80,95,94,24,8,8,24,11,8,89,84,85,9,6,6,85,88,82,67,95,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,man,,24,Democrat,,100,yes,,,,yes,okjkj,R_6DBiUloipTwlt8n,,,
+2024-06-18 13:22:56,2024-06-18 13:25:41,Umfragenvorschau,100,164,Wahr,2024-06-18 13:25:41,R_6mPmGaeq0s03GMV,preview,EN,,United States,English,✕,consent,a transcript from a new radio show,to convey a realistic impression of political disagreements,,,,REP_CON_ENVIRONMENT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,85,12,100,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,100,100,100,0,0,0,0,0,0,100,100,100,0,0,0,100,100,100,100,100,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,man,,34,Democrat,,40,yes,,,,yes,,R_6mPmGaeq0s03GMV,,"Data Security, Storage, and Analysis; Conditions of Participation; ✕",5753; 3467; 3622

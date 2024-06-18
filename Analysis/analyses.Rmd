@@ -1,0 +1,723 @@
+---
+title: "Analyses for DIAG-Party-Radio"
+output: 
+  html_notebook:
+  code_folding: hide
+---
+
+```{r setup, include = FALSE}
+# R version 4.2.3
+# load packages & set options
+library(dplyr) # dplyr_1.1.2
+library(ggplot2) # ggplot2_3.4.2
+library(ggpubr) # ggpubr_0.6.0
+library(ggrepel, include.only = "geom_label_repel") # ggrepel_0.9.3
+library(here) # here_1.0.1
+library(lmerTest) # lmerTest_3.1-3
+library(magrittr, include.only = "%T>%") # magrittr_2.0.3
+library(rstatix) # rstatix_0.7.2
+library(showtext) # showtext_0.9-6
+library(tidyverse) # tidyverse_2.0.0
+
+# Read data
+dat <- readRDS(here::here("Processed data/processed-data.rds"))
+dec <- read_csv2(here::here("Processed data/deception.csv"))[, c(2, 4)]
+dat <- left_join(dat, dec, join_by(subject_id == ResponseId))
+
+# Demographics
+dems <- dat %>%
+  select(subject_id, age, gender, partisan_identity,
+    time_taken, time_on_data_security,
+    stand_out, deception, deception_coded, further_comments) %>%
+  unique()
+
+# Add custom font for plots
+font_add("Nunito",
+  regular = "/Users/carsten/Library/Fonts/NunitoSans-Regular.ttf",
+  italic = "/Users/carsten/Library/Fonts/NunitoSans-Italic.ttf",
+  bold = "/Users/carsten/Library/Fonts/NunitoSans-Bold.ttf",
+  bolditalic = "/Users/carsten/Library/Fonts/NunitoSans-BoldItalic.ttf")
+showtext_auto()
+
+# Custom functions
+formp <- function(p, text = FALSE) {
+  ## ---------------------------
+  ## Format p values
+  ##
+  ## This function takes in a number between
+  ## zero and one or a formatted p-value and outputs
+  ## a formatted p-value. If p-value is already formatted
+  ## then applying the function changes the format from
+  ## "p = .034" to ".034" and vice versa.
+  ##
+  ## @p p-value to be formatted
+  ## @text adds "p = " or "p < " to output
+  ##
+  ## @out string with formatted p-value
+  ## ---------------------------
+
+  # If already formatted but no "p" then add "p"
+  if (grepl("^<.\\d{3}$", p)) {
+  out <- gsub("<", "p < ", p)
+  } else if (grepl("^.\\d{3}$", p)) {
+  out <- gsub("^", "p = ", p)
+  # If already formatted and "p" then remove "p"
+  } else if (grepl("^p < .\\d{3}$", p)) {
+  out <- gsub("p < ", "<", p)
+  } else if (grepl("^p = .\\d{3}$", p)) {
+  out <- gsub("p = ", "", p)
+  # If not yet formatted and smaller than .001
+  } else if (is.numeric(p) && p < 0.001) {
+  if (text) {
+    out <- "p < .001"
+  } else {
+    out <- "<.001"
+  }
+  # If not yet formatted and bigger than .001
+  } else if (p >= 0.001) {
+  p <- format(round(p, 3), nsmall = 3, scientific = FALSE)
+  p <- sub("0.", ".", p)
+  if (text) {
+    out <- paste("p =", p)
+  } else {
+    out <- p
+  }
+  }
+  return(out)
+}
+forma <- function(number, dec = NULL, lead_zero = TRUE) { # nolint
+  ## ---------------------------
+  ## Format values in apa style
+  ##
+  ## This function takes in a number and outputs
+  ## a formatted number. If no decimal is provided, then
+  ## it uses a heuristic to round the number. If lead_zero
+  ## is set to FALSE, then the lead zero of the number is
+  ## removed (useful for p-values or eta squared).
+  ##
+  ## @number input number
+  ## @dec optional number of decimals
+  ## @lead_zero keep leading zero
+  ##
+  ## @out formatted number
+  ## ---------------------------
+
+  # If dec is logical, interpret as lead_zero
+  if (is.logical(dec)) {
+  lead_zero <- dec
+  dec <- NULL
+  }
+  # If no decimal is specified, use heuristic
+  if (!is.null(dec)) {
+  } else if (abs(number) >= 100) {
+    dec <- 0
+  } else if (abs(number) >= 10 && number < 100) {
+    dec <- 1
+  } else if (abs(number) >= 0.1 && number < 10) {
+    dec <- 2
+  } else if (abs(number) >= 0.001 && number < 0.1) {
+    dec <- 3
+  } else if (abs(number) < 0.001 && number != 0) {
+    dec <- stringr::str_locate(format(
+      abs(number), scientific = FALSE), "[1-9]{1}")[1] - 2
+  } else if (number == 0) {
+    dec <- 0
+  }
+  # Round number to decimal
+  out <- format(round(number, dec), nsmall = dec, scientific = FALSE)
+  # Remove leading zero if required
+  if (out < 1 && lead_zero == FALSE) {
+  out <- sub("0.", ".", out)
+  }
+  return(out)
+}
+cor_table <- function(data, method = c("pearson", "spearman")) {
+  # Compute correlation matrix
+  pvalues <- data %>%
+  cor_pmat(method = method[1]) %>%
+  rowwise() %>%
+  mutate(across(!1, formp))
+  coefs <- data %>%
+  cor_mat(method = method[1]) %>%
+  rowwise() %>%
+  mutate(across(!1, forma, 2))
+  for (row in seq(2, nrow(coefs))) {
+  for (col in seq(2, ncol(coefs) - 1)) {
+    c <- coefs[row, col]
+    p <- pvalues[row, col]
+    coefs[row, col] <- paste0(c, " (", p, ")")
+  }
+  }
+  coefs <- coefs %>%
+  pull_lower_triangle() %>%
+  slice(-1) %>%
+  select(-last_col()) %>%
+  rename(variable = 1)
+  return(coefs)
+}
+theme_cs_talk <- function(font = "Nunito", lab_size = 16, label_size = 14,
+  dark = "#465263", light = "#E1E9ED", solid_facet = TRUE) {
+  if (solid_facet) {
+  facet_fill <- dark
+  facet_text <- light
+  } else if (!solid_facet) {
+  facet_fill <- "transparent"
+  facet_text <- dark
+  }
+  theme_bw(base_size = 16) %+replace%
+  theme(
+  # Rectangle elements
+  plot.background = element_rect(fill = "transparent",
+    color = NA_character_),
+  panel.background = element_rect(fill = "transparent"),
+  legend.background = element_rect(fill = "transparent", color = NA),
+  strip.background = element_rect(color = facet_fill,
+    fill = facet_fill, linewidth = 1),
+  # Text elements
+  plot.title = element_text(family = font, size = lab_size,
+    face = "bold", hjust = 0, vjust = 2, color = dark),
+  plot.subtitle = element_text(family = font,
+    size = lab_size - 2, color = dark),
+  plot.caption = element_text(family = font, size = lab_size,
+    hjust = 1, color = dark),
+  axis.title = element_text(family = font, size = lab_size,
+    color = dark),
+  axis.text = element_text(family = font, size = label_size,
+    color = dark),
+  axis.text.x = element_text(margin = margin(5, b = 10),
+    color = dark),
+  legend.title = element_text(family = font, size = lab_size,
+    color = dark, hjust = 0),
+  legend.text = element_text(family = font, size = label_size,
+    color = dark),
+  strip.text = element_text(family = font, size = label_size,
+    color = facet_text, margin = margin(4, 4, 4, 4)),
+  # Line elements
+  axis.ticks = element_line(color = dark, linewidth = 0.5),
+  legend.key = element_rect(fill = "transparent", color = NA_character_),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  panel.border = element_rect(color = dark, fill = NA, linewidth = 1)
+  )
+}
+```
+
+### Sample Characteristics
+We collected data from a total of N = 240 participants. Following our exclusion criteria we had to exclude 24 participants who inferred the wrong category in three or more pre-inference items. This resulted in N = 216 valid datasets (90 men, 124 women, 2 non-binary; median age Mdn = `r round(median(dems$age, na.rm = TRUE), 1)` years, ranging from `r min(dems$age, na.rm = TRUE)` to `r max(dems$age, na.rm = TRUE)`). The majority of the sample identified as Democrat (129 Democrats, 38 Republicans, 37 Independents, 12 Other). Participants were recruited via the online platform Prolific (www.prolific.co) and received monetary compensation of 1.05 GBP for completing the 7-minute study. 30 additional people started the experiment on prolific but returned their submission, timed-out, did not meet the inclusion criteria, or failed the comprehension check.
+
+### Target Inference ~ Time * Typicality {.tabset}
+```{r target inference ~ time * typicality, warning = FALSE, message = FALSE}
+# Inference data
+inf_dat <- dat %>%
+  filter(item_type == "target")
+
+# Descriptives
+inf_desc <- inf_dat %>%
+  group_by(time, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Run ANOVA
+inf_mod <- inf_dat %>%
+  anova_test(dv = inf, wid = subject_id,
+    effect.size = "pes", within = time, between = typicality) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+```
+
+Our preregistered analysis was a two-way mixed ANOVA with the target inference as the dependent variable, time as a within-subjects factor, and typicality as a between-subjects factor. We obtained significant effects for typicality, F(`r inf_mod$DFn[1]`, `r inf_mod$DFd[1]`) = `r inf_mod$F[1]`, `r formp(inf_mod$p[1])`, $\eta_{p}^{2}$ = `r inf_mod$pes[1]`, and for time, F(`r inf_mod$DFn[2]`, `r inf_mod$DFd[2]`) = `r inf_mod$F[2]`, `r formp(inf_mod$p[2])`, $\eta_{p}^{2}$ = `r inf_mod$pes[2]`. As expected, these effects were qualified by a significant interaction, F(`r inf_mod$DFn[3]`, `r inf_mod$DFd[3]`) = `r inf_mod$F[3]`, `r formp(inf_mod$p[3])`, $\eta_{p}^{2}$ = `r inf_mod$pes[3]`.
+
+#### Outlier detection
+```{r target inference ~ time * typicality outlier, warning = FALSE, message = FALSE}
+inf_dat %>%
+  group_by(subject_id) %>%
+  mutate(difference = (inf[time == "POST"] - inf[time == "PRE"])) %>%
+  ungroup() %>%
+  filter(time == "PRE") %>%
+  ggplot(., aes(typicality, difference)) +
+  geom_boxplot() +
+  labs(x = "Typicality", y = "Difference in Inferences (Post - Pre)") +
+  theme_cs_talk()
+```
+
+#### QQ-Plot
+```{r target inference ~ time * typicality qq, message = FALSE}
+inf_dat %>%
+  ggplot(., aes(sample = inf)) +
+  labs(x = "Theoretical quantiles", y = "Data quantiles") +
+  stat_qq(color = "#000000") +
+  stat_qq_line(color = "#000000") +
+  facet_grid(time ~ typicality, labeller = "label_value") +
+  theme_cs_talk()
+```
+
+#### Descriptives
+```{r target inference ~ time * typicality descriptives}
+knitr::kable(inf_desc, format = "markdown")
+```
+
+#### ANOVA
+```{r target inference ~ time * typicality anova}
+knitr::kable(inf_mod, format = "markdown")
+```
+
+#### Lineplot
+```{r target inference ~ time * typicality lineplot}
+inf_dat %>%
+  group_by(subject_id) %>%
+  mutate(slope = (inf[time == "POST"] - inf[time == "PRE"])) %>%
+  ungroup() %>%
+  mutate(slope_bins = cut(slope, breaks = c(-Inf, -1, Inf),
+    labels = c("-100 to -1", "0 to 100"))) %>%
+  mutate(time = factor(time, levels = c("PRE", "POST"))) %>%
+  ggplot(aes(x = time, y = inf, group = subject_id, color = slope_bins)) +
+  geom_line() +
+  facet_grid(. ~ typicality) +
+  stat_summary(aes(group = 1), geom = "line",
+    fun = mean, linewidth = 3, color = "#465263") +
+  labs(title = "Change in inferences over time",
+    x = "Timepoint", y = "Inference") +
+  theme_cs_talk()
+```
+
+#### Histogram
+```{r target inference ~ time * typicality histogram}
+inf_dat %>%
+  group_by(subject_id) %>%
+  mutate(difference = (inf[time == "POST"] - inf[time == "PRE"])) %>%
+  ungroup() %>%
+  filter(time == "PRE") %>%
+  mutate(difference_bin = cut(difference,
+    breaks = 9, labels = FALSE, include.lowest = TRUE)) %>%
+  ggplot() +
+  geom_bar(position = position_dodge(preserve = "single"),
+  aes(x = difference_bin, y = after_stat(prop), fill = typicality),
+    width = 0.8) +
+  labs(title = "Histogramm of Difference Scores for Inferences",
+    x = "Difference in inferences (Post - Pre; binned)",
+    y = "Proportion", fill = "Typicality") +
+  theme_cs_talk() +
+  theme(axis.text.x = element_blank())
+```
+
+
+#### Post-hoc tests
+```{r target inference ~ time * typicality post-hoc}
+# Paired t-test
+inf_post_con <- filter(inf_dat, typicality == "CON") %>%
+  t_test(
+    inf ~ time, paired = TRUE,
+    conf.level = 0.975) %>%
+  mutate(p = formp(p, text = TRUE), statistic = forma(statistic))
+inf_post_dis <- filter(inf_dat, typicality == "DIS") %>%
+  t_test(
+    inf ~ time, paired = TRUE,
+    conf.level = 0.975) %>%
+  mutate(p = formp(p, text = TRUE), statistic = forma(statistic))
+
+# Cohens dz
+inf_post_con_dz <- filter(inf_dat, typicality == "CON") %>%
+  cohens_d(inf ~ time, paired = TRUE) %>%
+  pull(effsize) %>%
+  forma()
+inf_post_dis_dz <- filter(inf_dat, typicality == "DIS") %>%
+  cohens_d(inf ~ time, paired = TRUE) %>%
+  pull(effsize) %>%
+  forma()
+
+# Print t-test
+inf_post_con_test <- paste0("t(", inf_post_con$df, ") = ",
+  inf_post_con$statistic, ", ", inf_post_con$p, ", d~z~ = ",
+  inf_post_con_dz)
+inf_post_dis_test <- paste0("t(", inf_post_dis$df, ") = ",
+  inf_post_dis$statistic, ", ", inf_post_dis$p, ", d~z~ = ",
+  inf_post_dis_dz)
+```
+
+Post-hoc analyses revealed that the effect of time was significant and positive in the stereotype confirming condition, `r inf_post_con_test`, and significant and negative in the stereotype disconfirming condition, `r inf_post_dis_test`.
+
+#### Moderation by partisan fit
+```{r target inference ~ time * typicality * partisan fit}
+# Prepare data
+inf_partisan_fit_dat <- inf_dat %>%
+  # Select participants who identify with one of the major parties
+  filter(partisan_identity %in% c("Republican", "Democrat")) %>%
+  # Recode partisan identity
+  mutate(partisan_identity = case_match(partisan_identity,
+    "Democrat" ~ "DEM", "Republican" ~ "REP")) %>%
+  mutate(partisan_fit = as.factor(ifelse(
+    partisan_identity == target_partisanship,
+    "same", "different")))
+
+# Descriptives
+inf_partisan_fit_desc <- inf_partisan_fit_dat %>%
+  group_by(partisan_fit, time, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+knitr::kable(inf_partisan_fit_desc, format = "markdown")
+
+# Run ANOVA
+inf_partisan_fit_mod <- inf_partisan_fit_dat %>%
+  anova_test(dv = inf, wid = subject_id,
+    effect.size = "pes", within = time,
+    between = c(partisan_fit, typicality)) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+```
+
+It may be possible that the effect of diagnosticity on the inferences depends on the fit between the participant's partisanship and the target's partisanship. We therefore ran an exploratory analysis examining the role of partisan fit (i.e., whether participant and target have the same partisanship or a different one). We conducted a three-way mixed ANOVA with the target inference as the dependent variable, time as a within-subjects factor, and partisan fit and typicality as between-subjects factors. We obtained significant effects for typicality, F(`r inf_partisan_fit_mod$DFn[2]`, `r inf_partisan_fit_mod$DFd[2]`) = `r inf_partisan_fit_mod$F[2]`, `r formp(inf_partisan_fit_mod$p[2])`, $\eta_{p}^{2}$ = `r inf_partisan_fit_mod$pes[2]`, for time, F(`r inf_partisan_fit_mod$DFn[3]`, `r inf_partisan_fit_mod$DFd[3]`) = `r inf_partisan_fit_mod$F[3]`, `r formp(inf_partisan_fit_mod$p[3])`, $\eta_{p}^{2}$ = `r inf_partisan_fit_mod$pes[3]`, and a significant interaction between typicality and time, F(`r inf_partisan_fit_mod$DFn[6]`, `r inf_partisan_fit_mod$DFd[6]`) = `r inf_partisan_fit_mod$F[6]`, `r formp(inf_partisan_fit_mod$p[6])`, $\eta_{p}^{2}$ = `r inf_partisan_fit_mod$pes[6]`. All other effects were non-significant. We thus conclude, that the effect of the diagnosticity manipulation is independent of whether the counterstereotypical target belongs to the preferred party or the opposing party.
+
+#### Moderation by political issue
+```{r target inference ~ time * typicality * issue}
+# Descriptives
+inf_issue_desc <- inf_dat %>%
+  group_by(issue, time, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+knitr::kable(inf_issue_desc, format = "markdown")
+
+# Run ANOVA
+inf_issue_mod <- inf_dat %>%
+  anova_test(dv = inf, wid = subject_id,
+    effect.size = "pes", within = time,
+    between = c(issue, typicality)) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+```
+
+We ran another exploratory analysis to test whether the effect of diagnosticity on the inferences was moderated by the issue for which diagnosticity was manipulated. We conducted a three-way mixed ANOVA with the target inference as the dependent variable, time as a within-subjects factor, and issue and typicality as between-subjects factors. We again obtained significant effects for typicality, F(`r inf_issue_mod$DFn[2]`, `r inf_issue_mod$DFd[2]`) = `r inf_issue_mod$F[2]`, `r formp(inf_issue_mod$p[2])`, $\eta_{p}^{2}$ = `r inf_issue_mod$pes[2]`, for time, F(`r inf_issue_mod$DFn[3]`, `r inf_issue_mod$DFd[3]`) = `r inf_issue_mod$F[3]`, `r formp(inf_issue_mod$p[3])`, $\eta_{p}^{2}$ = `r inf_issue_mod$pes[3]`, and a significant interaction between typicality and time, F(`r inf_issue_mod$DFn[6]`, `r inf_issue_mod$DFd[6]`) = `r inf_issue_mod$F[6]`, `r formp(inf_issue_mod$p[6])`, $\eta_{p}^{2}$ = `r inf_issue_mod$pes[6]`. All other effects were non-significant. We thus conclude, that the effect of the diagnosticity manipulation was independent of the presented political issue.
+
+#### Robustness check
+```{r target inference ~ time * typicality robustness check}
+# Prepare data
+inf_pre100ex_dat <- inf_dat %>%
+  group_by(subject_id) %>%
+  mutate(exclude = ifelse(inf[time == "PRE"] == 100, "exclude", "include")) %>%
+  ungroup() %>%
+  filter(exclude == "include")
+
+# Descriptives
+inf_pre100ex_desc <- inf_pre100ex_dat %>%
+  group_by(time, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Run ANOVA
+inf_pre100ex_mod <- inf_pre100ex_dat %>%
+  anova_test(dv = inf, wid = subject_id,
+    effect.size = "pes", within = time, between = typicality) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+```
+
+The distribution of inference scores was skewed towards the high values, with a relatively high frequency of maximum scores. In the pre-measurement of the target opinion `r sum(filter(inf_dat, time == "PRE")$inf == 100)` out of `r nrow(dems)` participants chose the highest response (100), suggesting that they believed that a person with this opinion definitely belonged to the party category stereotypically associated with it. However, it is possible that some of these participants did not think that they could infer partisanship with absolute certainty, but rather simplified the judgment task by treating the items as binary. For instance `r dat %>% group_by(subject_id) %>% filter(time == "PRE") %>% summarize(inf = sum(inf)) %>% filter(inf == 600) %>% nrow()` participants chose the highest response on all six pre-measurement items. It may be argued that the reduction in inferences in the disconfirming condition could be due to people shifting from a binary understanding of the items to a continuous understanding. This idea seems plausible if we look at how the `r sum(filter(inf_dat, time == "PRE")$inf == 100)` maximum scorers distribute across conditions: In the pre-measurement they were distributed equally across the two typicality conditions (stereotype-confirming: `r sum(filter(inf_dat, time == "PRE" & typicality == "CON")$inf == 100)`; stereotype-disconfirming: `r sum(filter(inf_dat, time == "PRE" & typicality == "DIS")$inf == 100)`). While in the stereotype-confirming condition almost all of these maximum scorers (`r sum(filter(inf_dat, time == "PRE" & typicality == "CON")$inf == 100 & filter(inf_dat, time == "POST" & typicality == "CON")$inf == 100)`) did not show reduced inferences in the post-measurement, in the stereotype-disconfirming condition a majority of the maximum scores (`r sum(filter(inf_dat, time == "PRE" & typicality == "DIS")$inf == 100 & filter(inf_dat, time == "POST" & typicality == "DIS")$inf != 100)`) did. To rule out the possibility of the effect being driven by participants shifting their understanding of the item, we ran an additional analysis excluding the `r sum(filter(inf_dat, time == "PRE")$inf == 100)` out of `r nrow(dems)` participants who chose the highest response in the pre-measurement target item. We conducted a two-way mixed ANOVA with the target inference as the dependent variable, time as a within-subjects factor, and typicality as between-subjects factor. We obtained a significant effect for typicality, F(`r inf_pre100ex_mod$DFn[1]`, `r inf_pre100ex_mod$DFd[1]`) = `r inf_pre100ex_mod$F[1]`, `r formp(inf_pre100ex_mod$p[1])`, $\eta_{p}^{2}$ = `r inf_pre100ex_mod$pes[1]`, a non-significant effect for time, F(`r inf_pre100ex_mod$DFn[2]`, `r inf_pre100ex_mod$DFd[2]`) = `r inf_pre100ex_mod$F[2]`, `r formp(inf_pre100ex_mod$p[2])`, $\eta_{p}^{2}$ = `r inf_pre100ex_mod$pes[2]`, and the expected significant interaction, F(`r inf_pre100ex_mod$DFn[3]`, `r inf_pre100ex_mod$DFd[3]`) = `r inf_pre100ex_mod$F[3]`, `r formp(inf_pre100ex_mod$p[3])`, $\eta_{p}^{2}$ = `r inf_pre100ex_mod$pes[3]`. This indicates that the effect was not driven by a change in the understanding of the items between measurement time points.
+
+#### Deception
+```{r target inference ~ time * typicality deception}
+# Inference data
+inf_dec_dat <- dat %>%
+  filter(item_type == "target") %>%
+  filter(deception_coded == "no" | is.na(deception_coded))
+
+# Descriptives
+inf_dec_desc <- inf_dec_dat %>%
+  group_by(time, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Run ANOVA
+inf_dec_mod <- inf_dec_dat %>%
+  anova_test(dv = inf, wid = subject_id,
+    effect.size = "pes", within = time, between = typicality) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+```
+
+To preclude that the effect was driven by participants who suspected the transcript to be made up we repeated the main analysis excluding every participant who indicated that they thought they were deceived about some aspect of the study (e.g., answers like "yes", "maybe", "I assume the script was written by the investigators.", "Yes. No way in hell was that a real transcript."). The two-way mixed ANOVA revealed a significant effect for typicality, F(`r inf_dec_mod$DFn[1]`, `r inf_dec_mod$DFd[1]`) = `r inf_dec_mod$F[1]`, `r formp(inf_dec_mod$p[1])`, $\eta_{p}^{2}$ = `r inf_dec_mod$pes[1]`, a non-significant effect for time, F(`r inf_dec_mod$DFn[2]`, `r inf_dec_mod$DFd[2]`) = `r inf_dec_mod$F[2]`, `r formp(inf_dec_mod$p[2])`, $\eta_{p}^{2}$ = `r inf_dec_mod$pes[2]`, and the expected significant interaction, F(`r inf_dec_mod$DFn[3]`, `r inf_dec_mod$DFd[3]`) = `r inf_dec_mod$F[3]`, `r formp(inf_dec_mod$p[3])`, $\eta_{p}^{2}$ = `r inf_dec_mod$pes[3]`. This indicates that the effect was not driven by participants who thought the transcript was made up and responded in a hypothesis-confirming way.
+
+#### Between-Subjects Analysis
+```{r target inference ~ typicality}
+# Inference post data
+inf_post_dat <- dat %>%
+  filter(item_type == "target") %>%
+  filter(time == "POST")
+
+# Descriptives
+inf_post_desc <- inf_post_dat %>%
+  group_by(typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Independent samples t-test
+inf_post_t <- inf_post_dat %>%
+  t_test(
+    inf ~ typicality, paired = FALSE,
+    conf.level = 0.95) %>%
+  mutate(p = formp(p, text = TRUE), df = forma(df),
+    statistic = forma(statistic))
+
+# Cohens dz
+inf_post_dz <- inf_post_dat %>%
+  cohens_d(inf ~ typicality, paired = FALSE) %>%
+  pull(effsize) %>%
+  forma()
+
+# Print t-test
+inf_post_test <- paste0("t(", inf_post_t$df, ") = ",
+  inf_post_t$statistic, ", ", inf_post_t$p, ", d~z~ = ",
+  inf_post_dz)
+```
+
+An additional independent samples t-test assessing the effect of typicality on the post-measurement inference item revealed significantly reduced inferences in the disconfirming compared to the confirming condition, `r inf_post_test`.
+
+#### Moderation by inference prior
+```{r target inference ~ time * typicality * prior}
+# Inference post data
+inf_prior_dat <- inf_dat %>%
+  pivot_wider(
+    id_cols = c(subject_id, typicality),
+    names_from = time,
+    values_from = inf
+  ) %>%
+  mutate(diff = POST - PRE) %>%
+  mutate(PRE_c = PRE - mean(PRE)) %>%
+  mutate(prior_c_squared = PRE_c^2)
+
+inf_prior_mod <- lm(diff ~ typicality * PRE_c,
+  data = inf_prior_dat, contrasts = list(typicality = contr.sum))
+inf_prior_mod_coefs <- as.data.frame(summary(inf_prior_mod)$coefficients) %>%
+  rename(p = `Pr(>|t|)`, t = `t value`, SE = `Std. Error`, B = Estimate) %>%
+  mutate(variable = rownames(.), .before = B) %>%
+  rowwise() %>%
+  mutate(p = formp(p), across(c(t, SE, B), ~ forma(.x)))
+knitr::kable(inf_prior_mod_coefs, format = "markdown")
+```
+
+We performed a multiple regression analysis to investigate the effect of typicality and the inference score on the pre-measurement on the change in inferences. We calculated a difference score (post - pre) for the target inference and centered the pre-measurement. Typicality was effect coded. The effect of typicality was significant. Moreover, there was a significant main effect of the pre-measurement, indicating greater reduction for participants with higher initial levels of ideological inferences. However, the interaction was not significant, indicating that this greater reduction was not specific to the stereotype disconfirming condition.
+
+### Transfer Effects: Non-Target Inferences ~ Time * Typicality {.tabset}
+```{r non-target inference ~ time * typicality, warning = FALSE, message = FALSE}
+# Inference data
+inf_non_target_dat <- dat %>%
+  # Select non-target issues that were not mentioned in transcript
+  filter(item_type != "target") %>%
+  filter(!item_issue %in% c("immigration", "income")) %>%
+  group_by(subject_id, typicality, time) %>%
+  summarize(.groups = "drop", inf = mean(inf))
+
+# Descriptives
+inf_non_target_desc <- inf_non_target_dat %>%
+  group_by(time, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Run ANOVA
+inf_non_target_mod <- inf_non_target_dat %>%
+  anova_test(dv = inf, wid = subject_id,
+    effect.size = "pes", within = time, between = typicality) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+```
+
+To test whether the effect was specific to the target item, we took the average of the three items that were not mentioned in the transcript and used the resulting inference score as the dependent variable of another two-way mixed ANOVA with time as a within-subjects factor and typicality as a between-subjects factor. We obtained a small significant effect for typicality, F(`r inf_non_target_mod$DFn[1]`, `r inf_non_target_mod$DFd[1]`) = `r inf_non_target_mod$F[1]`, `r formp(inf_non_target_mod$p[1])`, $\eta_{p}^{2}$ = `r inf_non_target_mod$pes[1]`. The effect for time, F(`r inf_non_target_mod$DFn[2]`, `r inf_non_target_mod$DFd[2]`) = `r inf_non_target_mod$F[2]`, `r formp(inf_non_target_mod$p[2])`, $\eta_{p}^{2}$ = `r inf_non_target_mod$pes[2]`, and the interaction, F(`r inf_non_target_mod$DFn[3]`, `r inf_non_target_mod$DFd[3]`) = `r inf_non_target_mod$F[3]`, `r formp(inf_non_target_mod$p[3])`, $\eta_{p}^{2}$ = `r inf_non_target_mod$pes[3]`, were not significant. This indicates that the effect of the diagnosticity manipulation did not generalize to other items. This also makes it seem less likely that the effect of the diagnosticity manipulation was driven by a change in response style (e.g., moving from a binary understanding of the inference items to a continuous one).
+
+#### Outlier detection
+```{r non-target inference ~ time * typicality outlier, warning = FALSE, message = FALSE}
+inf_non_target_dat %>%
+  group_by(subject_id) %>%
+  mutate(difference = (inf[time == "POST"] - inf[time == "PRE"])) %>%
+  ungroup() %>%
+  filter(time == "PRE") %>%
+  ggplot(., aes(typicality, difference)) +
+  geom_boxplot() +
+  labs(x = "Typicality", y = "Difference in inferences (Post - Pre)") +
+  theme_cs_talk()
+```
+
+#### QQ-Plot
+```{r non-target inference ~ time * typicality qq, message = FALSE}
+inf_non_target_dat %>%
+  ggplot(., aes(sample = inf)) +
+  labs(x = "Theoretical quantiles", y = "Data quantiles") +
+  stat_qq(color = "#000000") +
+  stat_qq_line(color = "#000000") +
+  facet_grid(time ~ typicality, labeller = "label_value") +
+  theme_cs_talk()
+```
+
+#### Descriptives
+```{r non-target inference ~ time * typicality descriptives}
+knitr::kable(inf_non_target_desc, format = "markdown")
+```
+
+#### ANOVA
+```{r non-target inference ~ time * typicality anova}
+knitr::kable(inf_non_target_mod, format = "markdown")
+```
+
+#### Lineplot
+```{r non-target inference ~ time * typicality lineplot}
+inf_non_target_dat %>%
+  group_by(subject_id) %>%
+  mutate(slope = (inf[time == "POST"] - inf[time == "PRE"])) %>%
+  ungroup() %>%
+  mutate(slope_bins = cut(slope, breaks = c(-Inf, -1, Inf),
+    labels = c("-100 to -1", "0 to 100"))) %>%
+  mutate(time = factor(time, levels = c("PRE", "POST"))) %>%
+  ggplot(aes(x = time, y = inf, group = subject_id, color = slope_bins)) +
+  geom_line() +
+  facet_grid(. ~ typicality) +
+  stat_summary(aes(group = 1), geom = "line",
+    fun = mean, linewidth = 3, color = "#465263") +
+  labs(title = "Change in Inferences over Time",
+    x = "Time", y = "Non-target inferences") +
+  theme_cs_talk()
+```
+
+#### Histogram
+```{r non-target inference ~ time * typicality histogram}
+inf_non_target_dat %>%
+  group_by(subject_id) %>%
+  mutate(difference = (inf[time == "POST"] - inf[time == "PRE"])) %>%
+  ungroup() %>%
+  filter(time == "PRE") %>%
+  mutate(difference_bin = cut(difference,
+    breaks = 9, labels = FALSE, include.lowest = TRUE)) %>%
+  ggplot() +
+  geom_bar(position = position_dodge(preserve = "single"),
+  aes(x = difference_bin, y = after_stat(prop), fill = typicality),
+    width = 0.8) +
+  labs(title = "Histogramm of Difference Scores for Non-Target Inferences",
+    x = "Difference in non-target inferences (Post - Pre; binned)",
+    y = "Proportion", fill = "Typicality") +
+  theme_cs_talk() +
+  theme(axis.text.x = element_blank())
+```
+
+### Manipulation Check: Stereotype ~ Typicality {.tabset}
+```{r stereotype ~ typicality, warning = FALSE, message = FALSE}
+# Stereotype data
+stereo_dat <- dat %>%
+  filter(item_type == "target") %>%
+  filter(time == "PRE")
+
+# Analyze manipulation check for non-target items
+# stereo_dat <- dat %>%
+#   # Select non-target issues that were not mentioned in transcript
+#   filter(item_type != "target") %>%
+#   filter(!item_issue %in% c("immigration", "income")) %>%
+#   filter(time == "PRE") %>%
+#   group_by(subject_id, typicality, time) %>%
+#   summarize(.groups = "drop", stereo = mean(stereo))
+
+# Descriptives
+stereo_desc <- stereo_dat %>%
+  group_by(typicality) %>%
+  get_summary_stats(stereo, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Independent samples t-test
+stereo_t <- stereo_dat %>%
+  t_test(
+    stereo ~ typicality, paired = FALSE,
+    conf.level = 0.95) %>%
+  mutate(p = formp(p, text = TRUE), df = forma(df),
+    statistic = forma(statistic))
+
+# Cohens dz
+stereo_dz <- stereo_dat %>%
+  cohens_d(stereo ~ typicality, paired = FALSE) %>%
+  pull(effsize) %>%
+  forma()
+
+# Print t-test
+stereo_test <- paste0("t(", stereo_t$df, ") = ",
+  stereo_t$statistic, ", ", stereo_t$p, ", d~z~ = ",
+  stereo_dz)
+```
+
+An independent samples t-test assessing the effect of typicality on the stereotype item revealed significantly reduced stereotypes in the stereotype disconfirming compared to the stereotype confirming condition, `r stereo_test`.
+
+#### Outlier detection
+```{r stereotype ~ typicality outlier, warning = FALSE, message = FALSE}
+stereo_dat %>%
+  ggplot(., aes(typicality, stereo)) +
+  geom_boxplot() +
+  labs(x = "Typicality", y = "Stereotype") +
+  theme_cs_talk()
+```
+
+#### QQ-Plot
+```{r stereotype ~ typicality qq, message = FALSE}
+stereo_dat %>%
+  ggplot(., aes(sample = inf)) +
+  labs(x = "Theoretical quantiles", y = "Data quantiles") +
+  stat_qq(color = "#000000") +
+  stat_qq_line(color = "#000000") +
+  facet_grid(~ typicality, labeller = "label_value") +
+  theme_cs_talk()
+```
+
+#### Descriptives
+```{r stereotype ~ typicality descriptives}
+knitr::kable(stereo_desc, format = "markdown")
+```
+
+#### Histogram
+```{r stereotype ~ typicality histogram}
+stereo_dat %>%
+  mutate(stereo_bin = cut(stereo,
+    breaks = 9, labels = FALSE, include.lowest = TRUE)) %>%
+  ggplot() +
+  geom_bar(position = position_dodge(preserve = "single"),
+  aes(x = stereo_bin, y = after_stat(prop), fill = typicality), width = 0.8) +
+  labs(title = "Histogramm of Stereotype Scores",
+    x = "Stereotyping (binned)",
+    y = "Proportion", fill = "Typicality") +
+  theme_cs_talk() +
+  theme(axis.text.x = element_blank())
+```
+
+### Diagnosticity
+```{r diagnosticity}
+# row = cat A
+# col = cat B
+m <- matrix(rep(0, 121), 11, 11)
+mx <- matrix(rep(0, 110), 11, 10)
+rownames(m) <- seq(100, 0, -10)
+rownames(mx) <- seq(100, 0, -10)
+colnames(m) <- seq(100, 0, -10)
+colnames(mx) <- paste0(seq(90, 0, -10), " --> ", seq(100, 10, -10))
+for (row in rownames(m)) {
+  for (col in colnames(m)) {
+    m[row, col] <- as.numeric(row) / (as.numeric(row) + as.numeric(col))
+  }
+}
+for (row in seq(11)) {
+   mx[row, ] <- diff(m[row, ])
+}
+```
