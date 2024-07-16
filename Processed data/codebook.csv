@@ -36,12 +36,24 @@ time_on_data_security;time the participant spent viewing the information on data
 time_taken;time the participant took to finish the study;duration;minutes;;
 gender;participant's gender;factor;;"man
 woman
-non-binary";
+non-binary
+n/a";
+pro_gender;participant's gender according to prolific demographic data;factor;;"Female
+Male";
 age;participant's age;numeric;years;;
+pro_age;participant's age according to prolific demographic data;numeric;years;;
+pro_racial_group;participant's racialized group membership according to prolific demographic data;factor;;"Asian
+Black
+Mixed
+Other
+White";
 partisan_identity;participant's partisan identity;factor;;"Democrat
-Republican
 Independent
+Republican
 Other";
+pro_partisan_identity;participant's partisan identity according to prolific demographic data;factor;;"Democrat
+Independent
+Republican";
 political_ideology;the participant's political ideology as reported on a one-item scale;numeric;;"0 = very conservative
 100 = very liberal";
 t1_like_nontarget;likeability of the non-target contestant after round 1;numeric;;"0 = very unlikable
@@ -58,4 +70,9 @@ typicality_nontarget;perceived typicality of the non-target contestant for their
 100 = very typical";
 stand_out;participant's response to the question whether anything about the transcript stood out to them;character;;;
 deception;participant's response to the question whether they thought that they were deceived about any aspect of the study;character;;;
+deception_coded;coded responses from the deception question;factor;;"no = participants who did not feel like they were deceived or who only felt so after reading the question 
+maybe = participants who were not sure or thought that they maybe or probably were deceived but did not report in what way they might have been deceived
+yes = participants who thought they were deceived but did not specify how
+fake transcript or research goal = participants who believed that the transcript was written by the researchers or AI and/or who thought the goal of the study was not to assess a new radio show
+NA = participants who provided no answer or an answer that was unintelligible";derived from deception
 further_comments;further comments provided after debriefing;character;;;

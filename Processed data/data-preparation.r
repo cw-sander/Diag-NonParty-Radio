@@ -24,7 +24,9 @@ library(tidyverse) # tidyverse_2.0.0
 library(magrittr, include.only = "%T>%") # magrittr_2.0.3
 
 # Download raw data from Github
-raw <- read.csv("Processed data/raw-data.csv") [-c(1, 2), ]
+raw <- read.csv(here::here("Processed data/raw-data.csv"))
+dec <- read_csv2(here::here("Processed data/deception.csv"))[, c(1, 3)]
+pro <- read_csv(here::here("Processed data/prolific-data.csv"))
 
 # ---------------------------
 
@@ -55,24 +57,27 @@ dat <- raw %>%
       str_to_lower(political_identity_3_TEXT), political_identity),
     time_taken = ymd_hms(EndDate) - ymd_hms(StartDate)) %>%
   # Recode open responses for gender
-  # mutate(
-  #   gender = case_match(gender,
-  #     c("Non Binary", "non-binary") ~ "non-binary",
-  #     c("") ~ "n/a", c("male", "man") ~ "man",
-  #     c("woman", "Female") ~ "woman")) %>%
+  mutate(
+    gender = case_match(gender,
+      c("non binary", "nonbinary", "Nonbinary", "Gender fluid") ~ "non-binary",
+      c("") ~ "n/a", c("Male", "man", "Transgender man") ~ "man",
+      c("woman", "Female", "Woman", "Woman ") ~ "woman")) %>%
   # Recode open responses for partisan identity
-  # mutate(
-  #   partisan_identity = case_match(partisan_identity,
-  #     .default = partisan_identity,
-  #     c("i'm registered republican but consider myself more independent",
-  #       "independent", "independent lean democrat",
-  #       "independent. lean liberal sometimes and lean conservative other times. ", # nolint
-  #       "independant", "independent ",
-  #       "independent leaning left", "") ~ "Independent",
-  #     c("centrist", "neutral", "true moderate", "communist", "i don't vote",
-  #       "leftist", "neither", "socialist", "socialist  ",
-  #       "libertarian") ~ "Other",
-  #     c("") ~ "n/a", )) %>%
+  mutate(
+    partisan_identity = case_match(partisan_identity,
+      .default = partisan_identity,
+      c("indenpent", "independant", "independant, but more conservative",
+        "independent", "independent ", "independent lean democrat",
+        "independent, republic leaning", "independent/conservative",
+        "moderate, or independent leaning conservative", "neither",
+        "no party affiliation", "moderate", "centrist", "non-partisan",
+        "none", "nonpartisan",
+        "unaffiliated independent", "registered no affiliation")
+        ~ "Independent",
+      c("green", "left leaning", "leftist", "libertarian",
+        "libertarian ", "progressive", "third position",
+        "i don't follow politics enough to know what these are.") ~ "Other",
+      c("", "n/a") ~ "n/a", )) %>%
   # Rename inference items
   rename(
     political_ideology = political_ideology_1,
@@ -102,13 +107,13 @@ dat <- raw %>%
     # Recode inference items from 0 = Target, 100 = Non-Target to
     # 0 = incorrect inference and 100 = correct inference
     across(matches("counterprob_inf_f_|stereoprob_inf_t_"),
-      ~ (. - 50) * -1 + 50),
+      ~ (.x - 50) * -1 + 50),
     # Recode stereotype items from 0 = disagree to 100 = agree to
     # 0 = stereotype-incongruent and 100 = stereotype-congruent response
     across(matches("stereo_t"), ~ (.x - 50) * -1 + 50)) %>%
   # Count the number of "wrong" inferences in the pre inference measure
   rowwise() %>%
-  mutate(n_wrong_pre = sum(c_across(matches("PRE_inf_")) < 50)) %>%
+  mutate(n_wrong_pre = sum(c_across(matches("_inf_f|_inf_t_other")) < 50)) %>%
   ungroup() %T>% {
   # Exclude participants
     assign(x = "last_n", value = nrow(.), envir = .GlobalEnv)
@@ -159,18 +164,25 @@ dat <- raw %>%
       item == "t_target" ~ "target",
       item %in% c("t_other_1", "t_other_2") ~ "test",
       item %in% c("f_abortion", "f_immigration", "f_income") ~ "filler")) %>%
+  # Add deception coded
+  left_join(dec, join_by(ResponseId == subject_id)) %>%
+  # Add prolific demographics
+  left_join(pro, join_by(ResponseId == subject_id)) %>%
   # Select variables
   select(subject_id = ResponseId,
     condition, target_category_label, target_category, category_type,
     typicality, issue, diagnosticity_component, item_issue, item_type,
     inf, stereo, n_wrong_pre, time_on_data_security, time_taken, gender,
-    age, partisan_identity, political_ideology,
+    pro_gender, age, pro_age, pro_racial_group, partisan_identity,
+    pro_partisan_identity, political_ideology, data_quality,
     matches("_like_"), matches("typicality_"),
-    stand_out, deception, further_comments = debriefing) %>%
+    stand_out, deception, deception_coded, further_comments = debriefing) %>%
   # Define factors
   mutate(across(c(subject_id, condition, target_category_label,
     target_category, category_type, typicality, issue,
-    diagnosticity_component, item_issue, item_type, gender, partisan_identity),
+    diagnosticity_component, item_issue, item_type, gender, pro_gender,
+    pro_racial_group, partisan_identity, pro_partisan_identity,
+    deception_coded),
     ~ as.factor(.x))) %>%
   mutate(typicality = factor(typicality, levels = c("DIS", "CON"))) %>%
   mutate(political_ideology = as.numeric(political_ideology))
