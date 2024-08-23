@@ -9,8 +9,6 @@ output:
 # R version 4.2.3
 # load packages & set options
 library(parallel)
-library(dplyr) # dplyr_1.1.2
-library(ggplot2) # ggplot2_3.4.2
 library(ggpubr) # ggpubr_0.6.0
 library(here) # here_1.0.1
 library(rstatix) # rstatix_0.7.2
