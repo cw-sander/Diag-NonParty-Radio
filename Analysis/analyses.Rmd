@@ -8,6 +8,7 @@ output:
 ```{r setup, include = FALSE}
 # R version 4.2.3
 # load packages & set options
+library(parallel)
 library(dplyr) # dplyr_1.1.2
 library(ggplot2) # ggplot2_3.4.2
 library(ggpubr) # ggpubr_0.6.0
@@ -49,10 +50,10 @@ dems_match <- dems %>%
 
 # Add custom font for plots
 font_add("Nunito",
-  regular = "/Users/carsten/Library/Fonts/NunitoSans-Regular.ttf",
-  italic = "/Users/carsten/Library/Fonts/NunitoSans-Italic.ttf",
-  bold = "/Users/carsten/Library/Fonts/NunitoSans-Bold.ttf",
-  bolditalic = "/Users/carsten/Library/Fonts/NunitoSans-BoldItalic.ttf")
+  regular = "~/Library/Fonts/NunitoSans-Regular.ttf",
+  italic = "~/Library/Fonts/NunitoSans-Italic.ttf",
+  bold = "~/Library/Fonts/NunitoSans-Bold.ttf",
+  bolditalic = "~/Library/Fonts/NunitoSans-BoldItalic.ttf")
 showtext_auto()
 
 # Custom functions
@@ -456,8 +457,6 @@ knitr::kable(select(mv, -cutoff_type, - cutoff_value), format = "markdown")
 
 To investigate the robustness of the effect across various outlier exclusion criteria, we conducted a multiverse analysis. We performed independent samples t-tests across several fixed and distribution-based thresholds. For the fixed thresholds we excluded ratings below 20, 30, or 40 uniformly across both experimental conditions. For the distribution-based criteria we excluded ratings that were 1.0, 1.5, 2.0, or 2.5 times the IQR above or below the condition median. The effect was significant across all seven thresholds. These results suggest that the effect may have been obscured due to model outliers. However, removing outliers may also have introduced bias, for instance if we inadvertantly removed more true model outliers in one of the two experimental conditions. This risk is especially high with the distribution-based thresholds we used: If in the disconfirming condition the distribution of inferences is shifted towards the scale midpoint, this would make low outliers more difficult to detect (due to a floor effect). Thus, applying the thresholds may have artificially inflated the effect by predominantly removing low outliers in the confirming condition. As this risk is reduced by the fixed thresholds, these provide a more conservative estimate of the true effect.
 
-Although these results suggest that there may be an effect of typicality on inferences of partisanship, this effect seems to be considerably smaller and less robust compared to the previous study. This may be because we removed the pre-measurement and changed the cover story. As we have argued above, the repeated-measures design made it very easy to infer our research hypothesis. Part of the observed effect in the previous study may therefore have been the consequence of demand effects. Another possibility is that measuring the inferences before presenting the counterstereotypical exemplar led to an activation of the relevant knowledge structures and therefore facilitated the learning of the new information. However, as neither demand characteristics nor pre-activation of the relevant knowledge structures will be present when we come across a counterstereotype in real life, the effects of the current study may provide a more realistic estimate of the change in inferences that is induced by counterstereotypes.
-
 ##### QQ-Plot
 ```{r target inference party ~ typicality qq, message = FALSE}
 inf_dat_ex %>%
@@ -556,87 +555,6 @@ knitr::kable(inf_issue_mod, format = "markdown")
 ```
 
 We ran another exploratory analysis to test whether the effect of diagnosticity on the inferences was moderated by the issue for which diagnosticity was manipulated. We conducted a two-way between-subjects ANOVA with the target inference as the dependent variable and issue and typicality as between-subjects factors. We found a significant effect of typicality. All other effects were non-significant.
-
-##### Moderation by typicality rating
-```{r target inference party ~ typicality * typicality_rating, message = FALSE, warning = FALSE}
-inf_typ_dat <- inf_dat_ex %>%
-  group_by(typicality) %>%
-  mutate(typicality_bin = ntile(typicality_target, 2)) %>%
-  mutate(typicality_bin = factor(typicality_bin, labels = c("low", "high"))) %>%
-  ungroup() %>%
-  mutate(typicality_target_c = typicality_target - 50)
-
-# DV: Typicality
-# Descriptives
-typ_desc <- inf_typ_dat %>%
-  group_by(typicality) %>%
-  get_summary_stats(typicality_target, type = "mean_sd") %>%
-  mutate(
-    ci95_low = mean - 1.96 * sd / sqrt(n),
-    ci95_upp = mean + 1.96 * sd / sqrt(n))
-
-# Independent samples t-test
-typ_t <- inf_typ_dat %>%
-  t_test(
-    typicality_target ~ typicality,
-    alternative = "less",
-    ref.group = "DIS") %>%
-  mutate(p = formp(p, text = TRUE), df = forma(df, 2),
-    statistic = forma(statistic))
-
-# Cohens d
-typ_d <- inf_typ_dat %>%
-  cohens_d(typicality_target ~ typicality, paired = FALSE) %>%
-  pull(effsize) %>%
-  forma()
-
-# Print t-test
-typ_report <- paste0("t(", typ_t$df, ") = ",
-  typ_t$statistic, ", ", typ_t$p, ", d = ",
-  typ_d)
-
-# DV: Inferences
-inf_typ_desc <- inf_typ_dat %>%
-  group_by(typicality_bin, typicality) %>%
-  get_summary_stats(inf, type = "mean_sd") %>%
-  mutate(
-    ci95_low = mean - 1.96 * sd / sqrt(n),
-    ci95_upp = mean + 1.96 * sd / sqrt(n))
-
-# Run regression
-contrasts(inf_typ_dat$typicality) <- c(1, 0)
-inf_typ_mod <- lm(
-    data = inf_typ_dat,
-    inf ~ typicality * typicality_target_c)
-inf_typ_mod_coefs <- summary(inf_typ_mod)$coefficients %>%
-  as_tibble() %>%
-  rowwise() %>%
-  transmute(
-    predictor = "var", estimate = forma(`Estimate`, 2),
-    SE = forma(`Std. Error`, 2), t = forma(`t value`, 2),
-    p = formp(`Pr(>|t|)`)) %>%
-  ungroup() %>%
-  mutate(predictor = c("intercept", "typicality CON -> DIS",
-    "typicality rating LOW -> HIGH", "interaction"))
-
-knitr::kable(inf_typ_mod_coefs, format = "markdown")
-
-# Plot
-inf_typ_dat %>%
-  ggplot(aes(x = typicality_target, y = inf, color = typicality)) +
-  geom_point(alpha = 0.6) +
-  geom_smooth(method = "lm", se = TRUE,
-    aes(group = typicality)) +
-  labs(
-    title = "Moderation by typicality rating",
-    x = "Typicality rating",
-    y = "Inference",
-    color = "Typicality") +
-  scale_color_manual(values = c("#2d85ff", "#28ea96")) +
-  theme_cs_talk()
-```
-
-The target person's perceived typicality in the disconfirming condition `r report_desc(typ_desc, 1)` was significantly lower than in the confirming condition `r report_desc(typ_desc, 2)`, `r typ_report`. To explore the effect of the typicality ratings, we ran a linear regression model with the inferences as the dependent variable and typicality, the typicality rating, and the interaction as the predictors. We used treatment-coding for typicality and scale midpoint centering for the typicality ratings. The overall model was significant, F(`r forma(summary(inf_typ_mod)$fstatistic[2], 0)`, `r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r forma(summary(inf_typ_mod)$fstatistic[1], FALSE)`, p = `r formp(pf(summary(inf_typ_mod)$fstatistic[1], summary(inf_typ_mod)$fstatistic[2], summary(inf_typ_mod)$fstatistic[3], lower.tail = FALSE))`, R^2^ = `r forma(summary(inf_typ_mod)$r.squared, FALSE)`. The main effect of typicality was not significant, b = `r inf_typ_mod_coefs$estimate[2]`, SE = `r inf_typ_mod_coefs$SE[2]`, t(`r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r inf_typ_mod_coefs$t[2]`, `r formp(inf_typ_mod_coefs$p[2])`, indicating that inferences were not generally weaker in the disconfirming condition. The main effect of perceived typicality was significant, b = `r inf_typ_mod_coefs$estimate[3]`, SE = `r inf_typ_mod_coefs$SE[3]`, t(`r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r inf_typ_mod_coefs$t[3]`, `r formp(inf_typ_mod_coefs$p[3])`, indicating that in the stereotype-confirming condition higher perceived typicality was associated with stronger inferences. Importantly, the interaction effect was significant, b = `r inf_typ_mod_coefs$estimate[4]`, SE = `r inf_typ_mod_coefs$SE[4]`, t(`r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r inf_typ_mod_coefs$t[4]`, `r formp(inf_typ_mod_coefs$p[4])`. This interaction indicates that in the disconfirming condition, a higher perceived typicality is associated with reduced inferences compared to the confirming condition.
 
 #### Stereotype Probability {.tabset}
 ```{r target inference party stereoprob ~ typicality, warning = FALSE, message = FALSE}
@@ -1056,87 +974,6 @@ knitr::kable(inf_ideo_issue_mod, format = "markdown")
 
 We ran another exploratory analysis to test whether the effect of diagnosticity on the inferences was moderated by the issue for which diagnosticity was manipulated. We conducted a two-way between-subjects ANOVA with the target inference as the dependent variable and issue and typicality as between-subjects factors. We found a significant effect for issue that was likely driven by lower inferences in the affirmative action condition. Moreover, we found a significant effect of typicality. The interaction was not significant.
 
-##### Moderation by typicality rating
-```{r target inference ideological ~ typicality * typicality_rating, message = FALSE, warning = FALSE}
-inf_ideo_typ_dat <- inf_ideo_dat_ex %>%
-  group_by(typicality) %>%
-  mutate(typicality_bin = ntile(typicality_target, 2)) %>%
-  mutate(typicality_bin = factor(typicality_bin, labels = c("low", "high"))) %>%
-  ungroup() %>%
-  mutate(typicality_target_c = typicality_target - 50)
-
-# DV: Typicality
-# Descriptives
-typ_ideo_desc <- inf_ideo_typ_dat %>%
-  group_by(typicality) %>%
-  get_summary_stats(typicality_target, type = "mean_sd") %>%
-  mutate(
-    ci95_low = mean - 1.96 * sd / sqrt(n),
-    ci95_upp = mean + 1.96 * sd / sqrt(n))
-
-# Independent samples t-test
-typ_ideo_t <- inf_ideo_typ_dat %>%
-  t_test(
-    typicality_target ~ typicality,
-    alternative = "less",
-    ref.group = "DIS") %>%
-  mutate(p = formp(p, text = TRUE), df = forma(df, 2),
-    statistic = forma(statistic))
-
-# Cohens d
-typ_ideo_d <- inf_ideo_typ_dat %>%
-  cohens_d(typicality_target ~ typicality, paired = FALSE) %>%
-  pull(effsize) %>%
-  forma()
-
-# Print t-test
-typ_ideo_report <- paste0("t(", typ_ideo_t$df, ") = ",
-  typ_ideo_t$statistic, ", ", typ_ideo_t$p, ", d = ",
-  typ_ideo_d)
-
-# DV: Inferences
-inf_ideo_typ_desc <- inf_ideo_typ_dat %>%
-  group_by(typicality_bin, typicality) %>%
-  get_summary_stats(inf, type = "mean_sd") %>%
-  mutate(
-    ci95_low = mean - 1.96 * sd / sqrt(n),
-    ci95_upp = mean + 1.96 * sd / sqrt(n))
-
-# Run regression
-contrasts(inf_ideo_typ_dat$typicality) <- c(1, 0)
-inf_ideo_typ_mod <- lm(
-    data = inf_ideo_typ_dat,
-    inf ~ typicality * typicality_target_c)
-inf_ideo_typ_mod_coefs <- summary(inf_ideo_typ_mod)$coefficients %>%
-  as_tibble() %>%
-  rowwise() %>%
-  transmute(
-    predictor = "var", estimate = forma(`Estimate`, 2),
-    SE = forma(`Std. Error`, 2), t = forma(`t value`, 2),
-    p = formp(`Pr(>|t|)`)) %>%
-  ungroup() %>%
-  mutate(predictor = c("intercept", "typicality CON -> DIS",
-    "typicality rating LOW -> HIGH", "interaction"))
-
-knitr::kable(inf_ideo_typ_mod_coefs, format = "markdown")
-
-# Plot
-inf_ideo_typ_dat %>%
-  ggplot(aes(x = typicality_target, y = inf, color = typicality)) +
-  geom_point(alpha = 0.6) +
-  geom_smooth(method = "lm", se = TRUE,
-    aes(group = typicality)) +
-  labs(
-    title = "Moderation by typicality rating",
-    x = "Typicality rating",
-    y = "Inference",
-    color = "Typicality") +
-  scale_color_manual(values = c("#2d85ff", "#28ea96")) +
-  theme_cs_talk()
-```
-
-The target person in the disconfirming condition was rated as significantly less typical than in the confirming condition, `r typ_ideo_report`. To explore the effect of the typicality ratings, we ran a linear regression model with the inferences as the dependent variable and typicality, the typicality rating, and the interaction as the predictors. We used treatment-coding for typicality and scale midpoint centering for the typicality ratings. The overall model was not significant, F(`r forma(summary(inf_ideo_typ_mod)$fstatistic[2], 0)`, `r forma(summary(inf_ideo_typ_mod)$fstatistic[3], 0)`) = `r forma(summary(inf_ideo_typ_mod)$fstatistic[1], FALSE)`, p = `r formp(pf(summary(inf_ideo_typ_mod)$fstatistic[1], summary(inf_ideo_typ_mod)$fstatistic[2], summary(inf_ideo_typ_mod)$fstatistic[3], lower.tail = FALSE))`, R^2^ = `r forma(summary(inf_ideo_typ_mod)$r.squared, FALSE)`. The main effect typicality was not significant, b = `r inf_ideo_typ_mod_coefs$estimate[2]`, SE = `r inf_ideo_typ_mod_coefs$SE[2]`, t(`r forma(summary(inf_ideo_typ_mod)$fstatistic[3], 0)`) = `r inf_ideo_typ_mod_coefs$t[2]`, `r formp(inf_ideo_typ_mod_coefs$p[2])`, indicating that inferences were not generally weaker in the disconfirming condition. The main effect of the typicality rating was not significant, b = `r inf_ideo_typ_mod_coefs$estimate[3]`, SE = `r inf_ideo_typ_mod_coefs$SE[3]`, t(`r forma(summary(inf_ideo_typ_mod)$fstatistic[3], 0)`) = `r inf_ideo_typ_mod_coefs$t[3]`, `r formp(inf_ideo_typ_mod_coefs$p[3])`. Lastly, there was no significant interaction, b = `r inf_ideo_typ_mod_coefs$estimate[4]`, SE = `r inf_ideo_typ_mod_coefs$SE[4]`, t(`r forma(summary(inf_ideo_typ_mod)$fstatistic[3], 0)`) = `r inf_ideo_typ_mod_coefs$t[4]`, `r formp(inf_ideo_typ_mod_coefs$p[4])`.
-
 #### Stereotype Probability {.tabset}
 ```{r target inference ideological stereoprob ~ typicality, warning = FALSE, message = FALSE}
 # Inference data
@@ -1368,6 +1205,353 @@ scatter3D(x = diag$probB, y = diag$probA, z = diag$incr_counter_effect,
 ```
 
 Decreasing the stereotype probability leads to larger decreases of diagnosticity the smaller the stereotype probability and the closer the two probabilities are together. Generally, these are cases with low diagnosticity. Increasing the counterstereotype probability the other hand leads to larger decreases of diagnosticity the smaller the counterstereotype probability and the further the two probabilities are apart. Generally these are cases with high diagnosticity. As the opinions presented in the current study are highly diagnostic, it would be expected on account of the diagnosticity formula, that decreasing the stereotype probability produces smaller decrease in diagnosticity compared to increasing the counterstereotype probability.
+
+### Analyses Across Category Types
+#### Moderation by Category Type and Diagnosticity Component {.tabset}
+```{r target inference ~ typicality * category_type * diagnosticity_component, warning = FALSE, message = FALSE}
+# Inference data
+full_dat <- dat %>%
+  filter(item_type == "target") %>%
+  filter(inf >= 40)
+
+# Descriptives
+full_desc <- full_dat %>%
+  select(category_type, diagnosticity_component, typicality, inf) %>%
+  group_by(category_type, diagnosticity_component, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Run ANOVA
+full_mod <- full_dat %>%
+  anova_test(dv = inf,
+    wid = subject_id,
+    effect.size = "pes",
+    within = diagnosticity_component,
+    between = c(category_type, typicality)) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+```
+
+To test whether the effect of typicality was moderated by category type or diagnosticity component, we conducted a three-way mixed ANOVA with the target inferences as the dependent variable, typicality and category type as between-subjects factors, and diagnosticity component as a within-subjects factor. We obtained a significant effect for typicality, F(`r full_mod$DFn[2]`, `r full_mod$DFd[2]`) = `r full_mod$F[2]`, `r formp(full_mod$p[2])`, $\eta_{p}^{2}$ = `r full_mod$pes[2]`, a significant effect for diagnosticity component, F(`r full_mod$DFn[3]`, `r full_mod$DFd[3]`) = `r full_mod$F[3]`, `r formp(full_mod$p[3])`, $\eta_{p}^{2}$ = `r full_mod$pes[3]`, and a significant interaction between category type and diagnosticity component, F(`r full_mod$DFn[5]`, `r full_mod$DFd[5]`) = `r full_mod$F[5]`, `r formp(full_mod$p[5])`, $\eta_{p}^{2}$ = `r full_mod$pes[5]`. All other effects were non-significant.
+
+##### Neutral Typicality Condition
+```{r target inference ~ typicality * item_type, warning = FALSE, message = FALSE}
+# Prepare inference data
+neu_dat <- dat %>%
+  # Drop stereotype probability condition
+  filter(diagnosticity_component == "COUNTERPROB") %>%
+  # Drop filler trials
+  filter(item_type %in% c("target", "test")) %>%
+  mutate(item_type = droplevels(item_type)) %>%
+  # Outlier exclusion
+  filter(inf >= 40) %>%
+  # Exclude incomplete participants
+  group_by(subject_id) %>%
+  filter(n() > 2) %>%
+  ungroup()
+
+# Find cell (typicality * issue) with lowest number of participants
+min_count <- neu_dat %>%
+  group_by(issue, typicality) %>%
+  summarise(.groups = "drop", n = n() / 3) %>%
+  pull(n) %>%
+  min()
+
+# Sample same number of participants for each cell (typicality * issue)
+set.seed(0)
+include_ids <- neu_dat %>%
+  select(subject_id, issue, typicality) %>%
+  unique() %>%
+  group_by(issue, typicality) %>%
+  slice_sample(n = min_count) %>%
+  ungroup() %>%
+  pull(subject_id)
+
+# Create balanced dataset
+neu_dat_balanced <- neu_dat %>%
+  filter(subject_id %in% include_ids) %>%
+  # Average test items
+  group_by(subject_id, typicality, item_type) %>%
+  summarize(.groups = "drop", inf = mean(inf))
+
+# Descriptives
+neu_desc <- neu_dat_balanced %>%
+  select(item_type, typicality, inf) %>%
+  group_by(item_type, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Run ANOVA
+neu_mod <- neu_dat_balanced %>%
+  anova_test(dv = inf,
+    wid = subject_id,
+    effect.size = "pes",
+    within = item_type,
+    between = typicality) %>%
+  as_tibble() %>%
+  rowwise() %>%
+  mutate(F = forma(`F`, 2), p = formp(p), pes = forma(pes, 3, FALSE))
+
+# Simple Effects Tests
+# Dependent samples t-test
+neu_dis_t <- neu_dat_balanced %>%
+  filter(typicality == "DIS") %>%
+  t_test(
+    inf ~ item_type, paired = TRUE,
+    alternative = "less",
+    ref.group = "target") %>%
+  mutate(p = formp(p, text = TRUE), statistic = forma(statistic))
+neu_con_t <- neu_dat_balanced %>%
+  filter(typicality == "CON") %>%
+  t_test(
+    inf ~ item_type, paired = TRUE,
+    alternative = "greater",
+    ref.group = "target") %>%
+  mutate(p = formp(p, text = TRUE), statistic = forma(statistic))
+
+# Cohens dz
+neu_dis_dz <- neu_dat_balanced %>%
+  filter(typicality == "DIS") %>%
+  cohens_d(inf ~ item_type, paired = TRUE) %>%
+  pull(effsize) %>%
+  forma()
+neu_con_dz <- neu_dat_balanced %>%
+  filter(typicality == "CON") %>%
+  cohens_d(inf ~ item_type, paired = TRUE) %>%
+  pull(effsize) %>%
+  forma()
+
+# Print t-test
+neu_dis_report <- paste0("t(", neu_dis_t$df, ") = ",
+  neu_dis_t$statistic, ", ", neu_dis_t$p, ", d~z~ = ",
+  neu_dis_dz)
+neu_con_report <- paste0("t(", neu_con_t$df, ") = ",
+  neu_con_t$statistic, ", ", neu_con_t$p, ", d~z~ = ",
+  neu_con_dz)
+```
+
+Our diagnosticity manipulation had no baseline condition. In polarized societies like the US, people should be much more likely to be confronted with stereotype confirming information than with stereotype disconfirming information. Therefore it could be argued that the confirming condition is unlikely to have made inferences stronger. To nevertheless test whether the counterstereotype truly leads to a decrease in diagnosticity, we compared the target inference item with the two test items for which diagnosticity had not been manipulated for the respective participant. As these items are the target items for other participants, this method controls for differences in baseline diagnosticity between the different items. To further prevent such differences from biasing the results, we used random sampling to obtain a balanced dataset in which the three issues were presented equally often as target and distractor items. We conducted a two-way mixed ANOVA with the inferences as the dependent variable, typicality as a between-subjects factor, and item type as a within-subjects factor. We obtained a significant effect for typicality, F(`r neu_mod$DFn[1]`, `r neu_mod$DFd[1]`) = `r neu_mod$F[1]`, `r formp(neu_mod$p[1])`, $\eta_{p}^{2}$ = `r neu_mod$pes[1]`, and a significant interaction, F(`r neu_mod$DFn[3]`, `r neu_mod$DFd[3]`) = `r neu_mod$F[3]`, `r formp(neu_mod$p[3])`, $\eta_{p}^{2}$ = `r neu_mod$pes[3]`. There was no significant effect of item type, F(`r neu_mod$DFn[2]`, `r neu_mod$DFd[2]`) = `r neu_mod$F[2]`, `r formp(neu_mod$p[2])`, $\eta_{p}^{2}$ = `r neu_mod$pes[2]`,
+
+Simple effects analyses revealed that the effect of item type was significant and negative in the stereotype disconfirming condition `r neu_dis_report`, indicating that counterstereotypical exemplars did reduce inferences compared to the baseline level. In the stereotype confirming condition the effect was positive and non-significant `r neu_con_report`, indicating that stereotypical exemplars did not increase inferences compared to baseline level. This suggests that the effect may be more strongly driven by a reduction of inferences due to the counterstereotypical exemplars rather than by an increase of inferences due to the stereotypical ones.
+
+##### Compare to Expected Value
+```{r simulation, message = FALSE, warning = FALSE}
+# Prepare observed data for counterstereotype probability condition
+sim_dat <- dat %>%
+  filter(item_type == "target") %>%
+  filter(diagnosticity_component == "COUNTERPROB") %>%
+  select(subject_id, typicality, inf) %>%
+  mutate(inf = ifelse(inf >= 40, inf / 100, NA)) %>%
+  pivot_wider(names_glue = "{typicality}_COUNTERPROB",
+    names_from = c(typicality),
+    values_from = inf) %>%
+  select(-subject_id)
+
+# Compute observed condition means and variances
+mus <- colMeans(sim_dat, na.rm = TRUE)
+vars <- unlist(lapply(sim_dat, var, na.rm = TRUE))
+
+# Calculate parameters for the Beta distribution
+alphas <- ((mus * (1 - mus)) / vars - 1) * mus
+betas <- ((mus * (1 - mus)) / vars - 1) * (1 - mus)
+
+# Compute change in diagnosticity
+diag <- data.frame(
+  # Stereotype probability
+  probA = rep(seq(0.01, 1, 0.01), each = 10000),
+  # Counterstereotype probability
+  probB = rep(rep(seq(0.01, 1, 0.01), each = 100), times = 100),
+  # Change in probability
+  incr = rep(seq(0.01, 1, 0.01), times = 10000)) %>%
+  # Remove cases that are diagnostic of other category
+  filter(probA >= probB) %>%
+  # Remove cases that would have a negative stereotype probability
+  filter(probA - incr >= 0) %>%
+  # Compute diagnosticity at baseline and with changed probs
+  mutate(
+    CON_COUNTERPROB = probA / (probA + probB),
+    CON_STEREOPROB = probA / (probA + probB),
+    DIS_COUNTERPROB = probA / (probA + (probB + incr)),
+    DIS_STEREOPROB = (probA - incr) / ((probA - incr) + probB)) %>%
+  # Compute increase compared to baseline
+  mutate(
+    counterprob_effect = DIS_COUNTERPROB - CON_COUNTERPROB,
+    stereoprob_effect = DIS_STEREOPROB - CON_STEREOPROB)
+
+# Define model function
+sim <- function(n = 360, alphas, betas, diag) {
+  # Simulate skewed data using beta distribution
+  d <- data.frame(
+      CON = rbeta(n / 2, alphas[1], betas[1]),
+      DIS = rbeta(n / 2, alphas[2], betas[2]))
+
+  # Select probabilities that best match the simulated data
+  winner <- diag %>%
+    # Calculate absolute total distance
+    mutate(abs_total_dist =
+      abs(CON_COUNTERPROB - mean(d$CON)) +
+      abs(DIS_COUNTERPROB - mean(d$DIS))) %>%
+    # Choose values with smallest absolute total distance
+    filter(abs_total_dist == min(abs_total_dist, na.rm = TRUE)) %>%
+    # Calculate means for simulated data
+    mutate(mean_con = mean(d$CON), mean_dis = mean(d$DIS)) %>%
+    mutate(var_con = var(d$CON), var_dis = var(d$DIS)) %>%
+    # Calculate expected
+    # Select variables to return
+    select(
+      probA, probB, incr, counterprob_effect, stereoprob_effect,
+      mean_con, mean_dis, var_con, var_dis)
+
+  # Return best match (in case of ties, randomly sample one)
+  return(slice_sample(winner))
+}
+
+# Run simulation
+result <- data.frame()
+RNGkind("L'Ecuyer-CMRG")
+result <- mclapply(X = rep(360, 10000),
+  FUN = sim, alphas = alphas, betas = betas, diag = diag,
+  mc.cores = 8, mc.set.seed = TRUE) %>%
+  do.call(rbind, .) %>%
+  as.data.frame()
+
+# Get summary stats for simulation results
+result_desc <- result %>%
+  get_summary_stats(everything(), type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Prepare observed data for stereotype probability condition
+inf_stereoprob_expect <- dat %>%
+  filter(item_type == "target") %>%
+  filter(diagnosticity_component == "STEREOPROB") %>%
+  select(subject_id, typicality, inf) %>%
+  filter(inf >= 40)
+
+# Get summary stats
+inf_stereoprob_expect_desc <- inf_stereoprob_expect %>%
+  group_by(typicality) %>%
+  get_summary_stats(everything(), type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Independent samples t-test against expected value
+inf_stereoprob_expect_t <- inf_stereoprob_expect %>%
+  t_test(
+    inf ~ typicality,
+    mu = result_desc$mean[5] * 100,
+    alternative = "two.sided",
+    ref.group = "DIS") %>%
+  mutate(p = formp(p, text = TRUE), df = forma(df, 2),
+    statistic = forma(statistic))
+
+# Cohens d
+inf_stereoprob_expect_d <- inf_stereoprob_expect %>%
+  mutate(inf = ifelse(
+    typicality == "CON",
+    inf + result_desc$mean[5] * 100,
+    inf)) %>%
+  cohens_d(inf ~ typicality) %>%
+  pull(effsize) %>%
+  forma()
+
+# Print t-test
+inf_stereoprob_expect_report <- paste0("t(", inf_stereoprob_expect_t$df, ") = ",
+  inf_stereoprob_expect_t$statistic, ", ", inf_stereoprob_expect_t$p, ", d = ",
+  inf_stereoprob_expect_d)
+```
+
+The effect of manipulating the stereotype probability component of diagnosticity on the strength of the inferences should be smaller than that of manipulating the counterstereotype probability component—at least in a context with highly diagnostic cues. To calculate how much smaller this effect should be, we ran a simulation. First, we calculated the expected condition means for a range of different baseline probabilities (P(cue|category A) and P(cue|category B)) and intervention effects (i.e., changes in these probabilities)–assuming that a diagnosticity of 0.5 would correspond to an inference score of 50 and a diagnosticity of 1 to an inference score of 100. We then simulated 10000 datasets based on the observed means and standard deviations of the counterstereotype probability condition. To account for the skewness of the data we used a beta distribution. For each simulated dataset we compared the simulated condition means to the expected condition means and selected the combination of baseline probabilities and intervention effects for which the simulated and expected condition means were closest to each other. We then computed the means of the baseline probabilities, intervention effects, and the expected effects for the counterstereotype and stereotype probability conditions. This procedure suggested that for a population with the observed means and variances the stereotype probability would be `r forma(result_desc$mean[1] * 100, 0)`%, the counterstereotype probability would be `r forma(result_desc$mean[2] * 100, 0)`%, and the change in probabilities would be `r forma(result_desc$mean[3] * 100, 1)`%. Given these values the expected effect in the stereotype probability condition would be `r forma(result_desc$mean[4] / result_desc$mean[5], 1)` times smaller than the effect in the counterstereotype probability condition. To test whether the observed effect significantly differed from the expected effect, we conducted a two-sided independent samples t-test testing whether the difference between target inferences in the stereotype-confirming and stereotype-disconfirming conditions was larger than `r forma(result_desc$mean[5])` (the expected effect). The difference between the disconfirming condition `r report_desc(inf_stereoprob_expect_desc, 1)` and the confirming condition `r report_desc(inf_stereoprob_expect_desc, 2)` did not significantly differ from the expected difference `r inf_stereoprob_expect_report`.
+
+##### Moderation by typicality rating
+```{r target inference ~ typicality * typicality_rating, message = FALSE, warning = FALSE}
+# Inference data
+inf_typ_dat <- dat %>%
+  filter(diagnosticity_component == "COUNTERPROB") %>%
+  filter(item_type == "target") %>%
+  filter(inf >= 40) %>%
+  group_by(typicality) %>%
+  mutate(typicality_bin = ntile(typicality_target, 2)) %>%
+  mutate(typicality_bin = factor(typicality_bin, labels = c("low", "high"))) %>%
+  ungroup() %>%
+  mutate(typicality_target_c = typicality_target - 50)
+
+# DV: Typicality
+# Descriptives
+typ_desc <- inf_typ_dat %>%
+  group_by(typicality) %>%
+  get_summary_stats(typicality_target, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Independent samples t-test
+typ_t <- inf_typ_dat %>%
+  t_test(
+    typicality_target ~ typicality,
+    alternative = "less",
+    ref.group = "DIS") %>%
+  mutate(p = formp(p, text = TRUE), df = forma(df, 2),
+    statistic = forma(statistic))
+
+# Cohens d
+typ_d <- inf_typ_dat %>%
+  cohens_d(typicality_target ~ typicality, paired = FALSE) %>%
+  pull(effsize) %>%
+  forma()
+
+# Print t-test
+typ_report <- paste0("t(", typ_t$df, ") = ",
+  typ_t$statistic, ", ", typ_t$p, ", d = ",
+  typ_d)
+
+# DV: Inferences
+inf_typ_desc <- inf_typ_dat %>%
+  group_by(typicality_bin, typicality) %>%
+  get_summary_stats(inf, type = "mean_sd") %>%
+  mutate(
+    ci95_low = mean - 1.96 * sd / sqrt(n),
+    ci95_upp = mean + 1.96 * sd / sqrt(n))
+
+# Run regression
+contrasts(inf_typ_dat$typicality) <- c(1, 0)
+inf_typ_mod <- lm(
+    data = inf_typ_dat,
+    inf ~ typicality * typicality_target_c)
+inf_typ_mod_coefs <- summary(inf_typ_mod)$coefficients %>%
+  as_tibble() %>%
+  rowwise() %>%
+  transmute(
+    predictor = "var", estimate = forma(`Estimate`, 2),
+    SE = forma(`Std. Error`, 2), t = forma(`t value`, 2),
+    p = formp(`Pr(>|t|)`)) %>%
+  ungroup() %>%
+  mutate(predictor = c("intercept", "typicality CON -> DIS",
+    "typicality rating LOW -> HIGH", "interaction"))
+
+# Plot
+inf_typ_dat %>%
+  ggplot(aes(x = typicality_target, y = inf, color = typicality)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = TRUE,
+    aes(group = typicality)) +
+  labs(
+    title = "Moderation by typicality rating",
+    x = "Typicality rating",
+    y = "Inference",
+    color = "Typicality") +
+  scale_color_manual(values = c("#849AB9", "#67d1b8")) +
+  theme_cs_talk()
+```
+
+The target person's perceived typicality in the disconfirming condition `r report_desc(typ_desc, 1)` was significantly lower than in the confirming condition `r report_desc(typ_desc, 2)`, `r typ_report`. To explore the effect of the typicality ratings on inference making, we ran a linear regression model with the inferences as the dependent variable and typicality, the typicality rating, and the interaction between the two as predictors. We used treatment-coding for typicality and scale midpoint centering for the typicality ratings. The overall model was significant, F(`r forma(summary(inf_typ_mod)$fstatistic[2], 0)`, `r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r forma(summary(inf_typ_mod)$fstatistic[1], FALSE)`, p = `r formp(pf(summary(inf_typ_mod)$fstatistic[1], summary(inf_typ_mod)$fstatistic[2], summary(inf_typ_mod)$fstatistic[3], lower.tail = FALSE))`, R^2^ = `r forma(summary(inf_typ_mod)$r.squared, FALSE)`. The main effect of typicality was not significant, b = `r inf_typ_mod_coefs$estimate[2]`, SE = `r inf_typ_mod_coefs$SE[2]`, t(`r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r inf_typ_mod_coefs$t[2]`, `r formp(inf_typ_mod_coefs$p[2])`, indicating that inferences were not weaker in the disconfirming condition at a medium perceived typicality. The main effect of perceived typicality was significant, b = `r inf_typ_mod_coefs$estimate[3]`, SE = `r inf_typ_mod_coefs$SE[3]`, t(`r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r inf_typ_mod_coefs$t[3]`, `r formp(inf_typ_mod_coefs$p[3])`, indicating that in the stereotype-confirming condition higher perceived typicality was associated with stronger inferences. Importantly, the interaction effect was significant, b = `r inf_typ_mod_coefs$estimate[4]`, SE = `r inf_typ_mod_coefs$SE[4]`, t(`r forma(summary(inf_typ_mod)$fstatistic[3], 0)`) = `r inf_typ_mod_coefs$t[4]`, `r formp(inf_typ_mod_coefs$p[4])`, indicating that in the disconfirming condition this relation was canceled out.
 
 ### Likability 
 #### Category Fit * Typicality {.tabset}

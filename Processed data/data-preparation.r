@@ -4,19 +4,19 @@
 ## Purpose of script:
 ##  Creates a long data.frame with ratings.
 ##
-## Author: Carsten Sander
+## Author: [redacted]
 ##
-## Date Created: 2024-04-26
+## Date Created: 2024-06-21
 ##
-## Copyright (c) Carsten Sander, 2024
-## Email: carsten.sander@uni-hamburg.de
+## Copyright (c) [redacted], 2024
+## Email: [redacted]
 ## ---------------------------
 ## Notes:
 ##  Before running this script, make sure your working directory
 ##  is set to a folder containing the /Processed data/ folder from
 ##  the github repository
 ##
-##  R Version -- 4.3.1
+##  R Version -- 4.2.3
 ## ---------------------------
 
 # Load packages
